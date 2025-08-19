@@ -1,1 +1,80 @@
-# adoptly-frontend
+# React Project
+
+This project is a React frontend application created using [Vite](https://vitejs.dev/). It is set up with a modular structure to facilitate collaboration among developers.
+
+## Project Structure
+
+- `src/`
+  - `components/` — Reusable UI components (e.g., Button).
+  - `pages/` — Components representing application pages (e.g., HomePage).
+  - `services/` — Logic for API interactions (e.g., requests to a Gitea backend).
+  - `App.jsx` — Main application component.
+  - `main.jsx` — Entry point for rendering React.
+  - `index.css` — Global styles.
+
+- `public/` — Static files (e.g., favicon, images).
+- `.env.example` — Template for environment variables (e.g., VITE_API_URL).
+- `.eslintrc.json` — ESLint configuration for code linting.
+- `.prettierrc` — Prettier configuration for code formatting.
+
+## Installation and Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/DFurtune/adoptly-frontend.git
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Copy `.env.example` to `.env` and configure environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open `http://localhost:5173` in your browser.
+
+## Available Scripts
+
+- `npm run dev` — Starts the development server.
+- `npm run build` — Builds the project for production.
+- `npm run preview` — Previews the built project.
+- `npm run lint` — Runs ESLint to check code quality.
+- `npm run format` — Formats code using Prettier.
+
+## API Configuration
+
+To connect to a backend (e.g., Gitea), configure the `VITE_API_URL` in the `.env` file. Example:
+```
+VITE_API_URL=http://your-backend-api.com
+```
+
+## Code Style
+
+- The project uses ESLint and Prettier to enforce consistent code style.
+- Before committing, run:
+  ```bash
+  npm run lint
+  npm run format
+  ```
+- Configuration details are in `.eslintrc.json` and `.prettierrc`.
+
+## Collaboration Guidelines
+
+- Keep components modular and reusable in `src/components/`.
+- Add new pages to `src/pages/`.
+- Place API-related logic in `src/services/`.
+- Use PascalCase for component and file names (e.g., `HomePage.jsx`).
+- Avoid global styles; prefer CSS Modules or other isolated styling approaches.
+
+## Environment Requirements
+
+- Node.js: v16 or higher
+- npm: v8 or higher
