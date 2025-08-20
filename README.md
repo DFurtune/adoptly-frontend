@@ -1,3 +1,4 @@
+```markdown
 # React Project
 
 This project is a React frontend application created using [Vite](https://vitejs.dev/). It is set up with a modular structure to facilitate collaboration among developers.
@@ -21,7 +22,7 @@ This project is a React frontend application created using [Vite](https://vitejs
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/DFurtune/adoptly-frontend.git
+   git clone <repository_url>
    ```
 
 2. Install dependencies:
@@ -66,6 +67,18 @@ VITE_API_URL=http://your-backend-api.com
   ```
 - Configuration details are in `.eslintrc.json` and `.prettierrc`.
 
+## Branch Protection Rules
+
+- The `main` branch is protected to ensure code quality and collaboration:
+  - **Pull requests are required**: Direct pushes to `main` are blocked.
+  - **Minimum 1 review**: At least one approval is required before merging.
+  - **Status checks**: CI checks (if configured) must pass before merging.
+- To contribute, create a new branch, push changes, and open a pull request:
+  ```bash
+  git checkout -b feature/your-feature
+  git push origin feature/your-feature
+  ```
+
 ## Collaboration Guidelines
 
 - Keep components modular and reusable in `src/components/`.
@@ -78,3 +91,4 @@ VITE_API_URL=http://your-backend-api.com
 
 - Node.js: v16 or higher
 - npm: v8 or higher
+```
