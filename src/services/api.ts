@@ -1,5 +1,5 @@
 const API_URL: string =
-  process.env.REACT_APP_API_URL || "http://localhost:3000";
+  import.meta.env.REACT_APP_API_URL || 'http://localhost:3000';
 
 export const fetchData = async <T>(endpoint: string): Promise<T> => {
   try {
@@ -10,7 +10,7 @@ export const fetchData = async <T>(endpoint: string): Promise<T> => {
     const data: T = await response.json();
     return data;
   } catch (error) {
-    console.error("API Error:", error);
+    console.error('API Error:', error);
     throw error;
   }
 };
