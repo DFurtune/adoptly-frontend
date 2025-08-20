@@ -1,12 +1,18 @@
+import { useEffect } from 'react';
 import Button from '../../components/Button/Button';
 
 const HomePage = () => {
+  useEffect(() => {
+    if (import.meta.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
+      console.debug('[HomePage] component mounted');
+      // eslint-disable-next-line no-console
+      console.debug(
+        '[HomePage] This is a simple log message for debugging purposes.'
+      );
+    }
+  }, []);
 
-  console.log('HomePage component rendered');
-
-  console.log('This is a simple log message for debugging purposes.');
-  
-  
   return (
     <div>
       <h1>Домашня сторінка</h1>
