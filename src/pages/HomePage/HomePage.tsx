@@ -3,13 +3,13 @@ import Button from '../../components/Button/Button';
 
 const HomePage = () => {
   useEffect(() => {
-    if (import.meta.env.NODE_ENV !== 'production') {
-      // eslint-disable-next-line no-console
+    if (import.meta.env.DEV) {
+      /* eslint-disable no-console */
       console.debug('[HomePage] component mounted');
-      // eslint-disable-next-line no-console
       console.debug(
         '[HomePage] This is a simple log message for debugging purposes.'
       );
+      /* eslint-enable no-console */
     }
   }, []);
 
