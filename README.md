@@ -75,8 +75,8 @@ VITE_API_URL=http://your-backend-api.com
   - **Status checks**: CI checks (if configured) must pass before merging.
 - To contribute, create a new branch, push changes, and open a pull request:
   ```bash
-  git checkout -b feature/your-feature
-  git push origin feature/your-feature
+  git checkout -b feature/OSTC-XX-your-branch-name
+  git push origin feature/OSTC-XX-your-branch-name
   ```
 
 ## Collaboration Guidelines
