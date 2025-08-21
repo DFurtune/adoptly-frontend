@@ -1,0 +1,36 @@
+.header {
+  width: 100vw;
+  height: 94px;
+  box-shadow: 0 2px 4px 0 rgba(81, 81, 81, 0.16);
+  background: #fff;
+  display: flex;
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1440px;
+}
+
+.list {
+  display: flex;
+  gap: 24px;
+}
+
+.item {
+  font-weight: 700;
+  font-size: 16px;
+  color: #515151;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  border-radius: 500px;
+  width: 36px;
+  height: 36px;
+  background: #f0f0f0;
+}
