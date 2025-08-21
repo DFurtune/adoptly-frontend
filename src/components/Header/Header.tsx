@@ -1,3 +1,4 @@
+import Navigation from '../Navigation/Navigation';
 import './Header.css';
 
 const Header = () => {
@@ -5,30 +6,20 @@ const Header = () => {
     <header className="header">
       <div className="container header__inner">
         <div>
-          <nav>
-            <ul className="list">
-              <li className="item">
-                <a href="#home">Головна</a>
-              </li>
-              <li className="item">
-                <a href="#about">Про нас</a>
-              </li>
-              <li className="item">
-                <a href="#help">Як допомогти</a>
-              </li>
-              <li className="item">
-                <a href="#shelters">Притулкам</a>
-              </li>
-              <li className="item">
-                <a href="#contacts">Контакти</a>
-              </li>
-            </ul>
-          </nav>
+          <Navigation />
         </div>
         <div className="actions">
-          <button className="btn">UA</button>
-          <button className="btn">F</button>
-          <button className="btn">P</button>
+          <button
+            type="button"
+            className="btn"
+            aria-label="Switch language to Ukrainian"
+            title="Ukrainian"
+            aria-pressed="true"
+          >
+            UA
+          </button>
+          <button type="button" className="btn"></button>
+          <button type="button" className="btn"></button>
         </div>
       </div>
     </header>

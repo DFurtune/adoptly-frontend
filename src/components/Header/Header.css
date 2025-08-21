@@ -3,13 +3,12 @@
   height: 94px;
   box-shadow: 0 2px 4px 0 rgba(81, 81, 81, 0.16);
   background: #fff;
-  display: flex;
 }
 .header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1440px;
+  height: 100%;
 }
 
 .list {
@@ -33,4 +32,28 @@
   width: 36px;
   height: 36px;
   background: #f0f0f0;
+  font-family: var(--second-family);
+  font-weight: 800;
+  font-size: 16px;
+  text-align: center;
+  color: #515151;
+}
+
+.btn:hover {
+  background: #e8e8e8;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:focus-visible {
+  outline: 2px solid #0053ba;
+  outline-offset: 2px;
+}
+
+.btn[aria-pressed='true'] {
+  background: #dfe7ff;
+  border-color: #b9c6ff;
 }
