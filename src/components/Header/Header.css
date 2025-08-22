@@ -4,7 +4,7 @@
   box-shadow: 0 2px 4px 0 rgba(81, 81, 81, 0.16);
   background: #fff;
 }
-.header__inner {
+.header_inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,8 +27,10 @@
   gap: 8px;
 }
 
+
 .btn {
   border-radius: 500px;
+  border: 1px solid transparent;
   width: 36px;
   height: 36px;
   background: #f0f0f0;

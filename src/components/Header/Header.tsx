@@ -4,7 +4,7 @@ import './Header.css';
 const Header = () => {
   return (
     <header className="header">
-      <div className="container header__inner">
+      <div className="container header_inner">
         <div>
           <Navigation />
         </div>
@@ -18,8 +18,8 @@ const Header = () => {
           >
             UA
           </button>
-          <button type="button" className="btn"></button>
-          <button type="button" className="btn"></button>
+          <button type="button" className="btn"  title="Favourite"></button>
+          <button type="button" className="btn" title="Username"></button>
         </div>
       </div>
     </header>
