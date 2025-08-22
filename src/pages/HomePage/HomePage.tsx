@@ -1,10 +1,9 @@
-import Button from '../../components/Button/Button';
+import HeroSection from '../../components/HeroSection/HeroSection';
 
 const HomePage = () => {
   return (
     <div>
-      <h1>Домашня сторінка</h1>
-      <Button onClick={() => alert('Кнопка натиснута!')}>Натисни мене</Button>
+      <HeroSection />
     </div>
   );
 };
