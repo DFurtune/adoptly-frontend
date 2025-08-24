@@ -1,4 +1,4 @@
-:root {
+.guide-card {
   --card-bg: #ecf1ff;
   --title-color: #c0cdef;
   --subtitle-color: #0a0c20;
@@ -7,8 +7,9 @@
   --card-gap: 32px;
   --text-gap: 12px;
   --card-border-radius: 44px;
-  --font-primary: 'Nunito', sans-serif;
+  --guide-title-font: 'Nunito', sans-serif;
   --font-secondary: 'Montserrat', sans-serif;
+  --guide-text-font: 'Montserrat', sans-serif;
 }
 
 .guide-card {
@@ -29,7 +30,7 @@
 }
 
 .guide-card-text h3 {
-  font-family: var(--font-primary);
+  font-family: var(--guide-title-font), sans-serif;
   font-weight: 800;
   font-size: 120px;
   line-height: 1.2;
@@ -37,7 +38,7 @@
 }
 
 .guide-card-text h4 {
-  font-family: var(--font-primary);
+  font-family: var(--guide-title-font), sans-serif;
   font-weight: 800;
   font-size: 1.5rem;
   line-height: 1.3;
@@ -45,7 +46,7 @@
 }
 
 .guide-card-text p {
-  font-family: var(--font-secondary);
+  font-family: var(--guide-text-font), sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
@@ -54,7 +55,7 @@
 }
 
 @media (max-width: 768px) {
-  :root {
+  .guide-card {
     --card-padding: 32px 24px;
     --card-gap: 16px;
     --text-gap: 8px;

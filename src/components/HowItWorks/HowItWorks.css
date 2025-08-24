@@ -31,7 +31,7 @@
   font-weight: 800;
   font-size: 74px;
   line-height: 120%;
-  letter-spacing: 0%;
+  letter-spacing: normal;
   color: var(--primary-color);
 }
 .how-it-works-header p {
@@ -39,7 +39,7 @@
   font-weight: 800;
   font-size: 32px;
   line-height: 120%;
-  letter-spacing: 0%;
+  letter-spacing: normal;
   padding-bottom: var(--header-padding-bottom);
 }
 .how-it-works-header img {
