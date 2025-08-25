@@ -41,3 +41,44 @@ button:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
+
+.button--primary {
+  background-color: #ff8c00;
+  color: white;
+  border-radius: 20px;
+  width: 245.5px;
+  padding: 24px 0;
+  font-size: 22px;
+
+  &:hover {
+    background-color: #ff7b00;
+  }
+
+  &:active {
+    background-color: #ffffff;
+    color: #0a0c20;
+    border: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.button--secondary {
+  background-color: transparent;
+  border: 2px solid #ff8c00;
+  color: #111827;
+  border-radius: 20px;
+  width: 245.5px;
+  padding: 24px 0;
+  font-size: 22px;
+
+  &:hover {
+    background-color: #ff7b00;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

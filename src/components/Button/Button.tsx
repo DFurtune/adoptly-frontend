@@ -3,13 +3,20 @@ import type { ReactNode } from 'react';
 
 import './Button.css';
 
+type ButtonVariant = 'primary' | 'secondary';
+
 interface ButtonProps {
   children: ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  variant?: ButtonVariant;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
-  return <button onClick={onClick}>{children}</button>;
+const Button: React.FC<ButtonProps> = ({ children, onClick, variant }) => {
+  return (
+    <button onClick={onClick} className={`button button--${variant}`}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

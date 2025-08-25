@@ -13,10 +13,18 @@ const HeroSection = () => {
           твій свайп може змінити життя
         </p>
         <div className="buttons">
-          <Button onClick={() => alert('Кнопка натиснута!')}>
+          <Button
+            variant="primary"
+            onClick={() => alert('Кнопка "Знайти улюбленця" натиснута!')}
+          >
             Знайти улюбленця
           </Button>
-          <Button onClick={() => alert('Кнопка натиснута!')}>Задонатити</Button>
+          <Button
+            variant="secondary"
+            onClick={() => alert('Кнопка "Задонатити" натиснута!')}
+          >
+            Задонатити
+          </Button>
         </div>
       </div>
       <div>
