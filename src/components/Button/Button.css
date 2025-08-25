@@ -76,6 +76,7 @@ button:disabled {
 
   &:hover {
     background-color: #ff7b00;
+    border: none;
   }
 
   &:focus {

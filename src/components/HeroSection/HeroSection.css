@@ -36,6 +36,6 @@
 
   img {
     padding-top: 46px;
-    line-height: 1;
+    display: block;
   }
 }
