@@ -3,6 +3,7 @@
 This project is a React-based frontend application designed to provide a user-friendly interface for interacting with a Gitea backend. It is built with modern web development tools and follows best practices for scalability and maintainability.
 
 ## Tech Stack
+
 - **Frontend**: React, Vite
 - **Styling**: CSS Modules, TailwindCSS (if applicable)
 - **State Management**: Context API, Redux (if applicable)
@@ -29,6 +30,7 @@ This project is a React-based frontend application designed to provide a user-fr
 ## Getting Started
 
 ### Prerequisites
+
 - **Node.js**: v20 or higher
 - **npm**: v8 or higher
 
@@ -134,7 +136,6 @@ For guidelines on how to contribute, please see `CONTRIBUTING.md`.
 ## License
 
 This project is licensed under the MIT License.
-
 
 ---
 
