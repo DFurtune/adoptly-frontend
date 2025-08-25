@@ -1,6 +1,16 @@
 # React Project
 
-This project is a React frontend application created using Vite. It is set up with a modular structure to facilitate collaboration among developers.
+This project is a React-based frontend application designed to provide a user-friendly interface for interacting with a Gitea backend. It is built with modern web development tools and follows best practices for scalability and maintainability.
+
+## Tech Stack
+
+- **Frontend**: React, Vite
+- **Styling**: CSS Modules, TailwindCSS (if applicable)
+- **State Management**: Context API, Redux (if applicable)
+- **Backend Integration**: REST API (Gitea backend)
+- **Build Tool**: Vite
+- **Linting and Formatting**: ESLint, Prettier
+- **CI/CD**: GitHub Actions
 
 ## Project Structure
 
@@ -17,6 +27,13 @@ This project is a React frontend application created using Vite. It is set up wi
 - **.prettierrc** — Prettier configuration for code formatting.
 - **.github/workflows/ci.yml** — GitHub Actions workflow for CI.
 
+## Getting Started
+
+### Prerequisites
+
+- **Node.js**: v20 or higher
+- **npm**: v8 or higher
+
 ## Installation and Setup
 
 1. Clone the repository:
@@ -25,33 +42,36 @@ This project is a React frontend application created using Vite. It is set up wi
    git clone <repository_url>
    ```
 
-2. Install dependencies:
+2. Clone the repository:
+
+   ```bash
+   cd <project_directory>
+   ```
+
+3. Install dependencies:
 
    ```bash
    npm install
    ```
 
-3. Copy .env.example to .env and configure environment variables:
+4. Copy .env.example to .env and configure environment variables:
 
    ```bash
    cp .env.example .env
    ```
 
-4. Start the development server:
+5. Start the development server:
 
    ```bash
    npm run dev
    ```
 
-5. Open [http://localhost:5173](http://localhost:5173) in your browser.
+6. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-## Available Scripts
+## Troubleshooting
 
-- `npm run dev` — Starts the development server.
-- `npm run build` — Builds the project for production.
-- `npm run preview` — Previews the built project.
-- `npm run lint` — Runs ESLint to check code quality.
-- `npm run format` — Formats code using Prettier.
+- Port Conflict: If port 5173 is already in use, update the vite.config.js file to use a different port.
+- Missing .env File: Ensure you have created a .env file based on .env.example.
 
 ## API Configuration
 
@@ -60,6 +80,14 @@ To connect to a backend (e.g., Gitea), configure the `VITE_API_URL` in the `.env
 ```
 VITE_API_URL=http://backend-api.com
 ```
+
+## Available Scripts
+
+- `npm run dev` — Starts the development server.
+- `npm run build` — Builds the project for production.
+- `npm run preview` — Previews the built project.
+- `npm run lint` — Runs ESLint to check code quality.
+- `npm run format` — Formats code using Prettier.
 
 ## Code Style
 
@@ -104,3 +132,13 @@ For guidelines on how to contribute, please see `CONTRIBUTING.md`.
 
 - **Node.js**: v20 or higher
 - **npm**: v8 or higher
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+### **Conclusion**
+
+The current README is a solid foundation, but adding the suggested sections and refinements will make it more comprehensive and developer-friendly. This ensures the README serves as a single source of truth, reducing onboarding time for new contributors.

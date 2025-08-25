@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+  gap: 24px;
+}
+
+.item {
+  font-weight: 700;
+  font-size: 16px;
+  color: #515151;
+}
+
+.item:hover {
+  /*   color: #000;це колір з мвкету виглядає не дуже на ховері*/
+  color: #ff8c00;
+}
