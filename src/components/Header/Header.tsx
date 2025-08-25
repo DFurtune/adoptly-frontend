@@ -18,7 +18,7 @@ const Header = () => {
           >
             UA
           </button>
-          <button type="button" className="btn"  title="Favourite"></button>
+          <button type="button" className="btn" title="Favourite"></button>
           <button type="button" className="btn" title="Username"></button>
         </div>
       </div>

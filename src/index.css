@@ -1,52 +1,75 @@
 @import '/src/style/reset.css';
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Montserrat:wght@400;700&family=Baloo+Chettan:wght@400&display=swap');
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-primary: 'Inter', system-ui, Helvetica, Arial, sans-serif;
+  --font-secondary: 'Nunito', sans-serif;
+  --font-tertiary: 'Montserrat', sans-serif;
+  --font-special: 'Baloo Chettan', sans-serif;
+
+  --text-color: rgba(255, 255, 255, 0.87);
+  --background-color: #242424;
+  --button-bg: #1a1a1a;
+  --button-text: #ffffff;
+  --container-padding: 40px;
+
+  font-family: var(--font-primary);
   line-height: 1.5;
   font-weight: 400;
-
+  color: var(--text-color);
+  background-color: var(--background-color);
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
 
-  --font-family: 'Inter', sans-serif;
-  --second-family: 'Nunito', sans-serif;
-  --third-family: 'Montserrat', sans-serif;
-  --font3: 'Baloo Chettan', sans-serif;
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #213547;
+    --background-color: #ffffff;
+    --button-bg: #f9f9f9;
+    --button-text: #213547;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 100%;
-  margin: 0 auto;
-  background-color: #cfd9f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3.2rem;
   line-height: 1.1;
 }
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 var(--container-padding);
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: light) {
+@media (max-width: 768px) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  button {
-    background-color: #f9f9f9;
+    --container-padding: 20px;
   }
 }
