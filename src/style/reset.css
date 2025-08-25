@@ -22,6 +22,21 @@ img {
   max-width: 100%;
   height: auto;
 }
+svg {
+  all: unset;
+  display: inline-block;
+}
+.icon {
+  all: unset;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  color: currentColor;
+  vertical-align: middle;
+}
+.icon use {
+  fill: currentColor;
+}
 
 button {
   background: none;
