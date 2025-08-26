@@ -19,9 +19,6 @@
     color: #0a0c20;
     border: none;
   }
-  &:focus {
-    outline: none;
-  }
 }
 .button--secondary {
   background-color: transparent;
@@ -31,8 +28,5 @@
   &:hover {
     background-color: #ff7b00;
     border: none;
-  }
-  &:focus {
-    outline: none;
   }
 }
