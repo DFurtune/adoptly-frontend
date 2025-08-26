@@ -1,7 +1,7 @@
 :root {
   --primary-color: #ff8c00;
   --font-primary: 'Nunito', sans-serif;
-  --section-padding: 54px 40px;
+  --section-padding: 54px 0;
   --header-padding-top: 100px;
   --header-padding-bottom: 150px;
   --header-gap: 8px;

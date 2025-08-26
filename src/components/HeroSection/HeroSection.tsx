@@ -1,0 +1,36 @@
+import Button from '../Button/Button';
+import './HeroSection.css';
+
+const HeroSection = () => {
+  return (
+    <section className="hero">
+      <div className="text-and-buttons">
+        <h1>
+          Знайди друга <br /> Врятуй життя
+        </h1>
+        <p>
+          Свайпай, знайомся, допомагай: <br />
+          твій свайп може змінити життя
+        </p>
+        <div className="buttons">
+          <Button
+            variant="primary"
+            onClick={() => alert('Кнопка "Знайти улюбленця" натиснута!')}
+          >
+            Знайти улюбленця
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={() => alert('Кнопка "Задонатити" натиснута!')}
+          >
+            Задонатити
+          </Button>
+        </div>
+      </div>
+      <div>
+        <img src="images/pets.svg" alt="Ілюстрація тварин для адопції" />
+      </div>
+    </section>
+  );
+};
+export default HeroSection;
