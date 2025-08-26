@@ -1,0 +1,25 @@
+.our-skills-in-numbers {
+  background-color: #ecf1ff;
+  border-radius: 44px;
+  padding: 100px 0;
+
+  & h2 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 74px;
+    line-height: 1.2;
+  }
+
+  .text-grid {
+    padding: 32px 177px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 32px;
+  }
+
+  & p {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
