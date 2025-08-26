@@ -3,8 +3,8 @@ import './HeroSection.css';
 
 const HeroSection = () => {
   return (
-    <div className="hero">
-      <div className="textAndButtons">
+    <section className="hero">
+      <div className="text-and-buttons">
         <h1>
           Знайди друга <br /> Врятуй життя
         </h1>
@@ -28,9 +28,9 @@ const HeroSection = () => {
         </div>
       </div>
       <div>
-        <img src="images/pets.svg" />
+        <img src="images/Frame 51.svg" />
       </div>
-    </div>
+    </section>
   );
 };
 export default HeroSection;
