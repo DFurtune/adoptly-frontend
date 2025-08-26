@@ -28,7 +28,7 @@ const HeroSection = () => {
         </div>
       </div>
       <div>
-        <img src="images/Frame 51.svg" />
+        <img src="images/pets.svg" />
       </div>
     </section>
   );
