@@ -28,7 +28,7 @@ const HeroSection = () => {
         </div>
       </div>
       <div>
-        <img src="images/pets.svg" />
+        <img src="images/pets.svg" alt="Ілюстрація тварин для адопції" />
       </div>
     </section>
   );
