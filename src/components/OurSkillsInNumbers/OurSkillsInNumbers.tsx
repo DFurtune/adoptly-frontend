@@ -1,3 +1,4 @@
+import NumberCard from '../NumberCard/NumberCard';
 import './OurSkillsInNumbers.css';
 
 const OurSkillsInNumbers = () => {
@@ -23,6 +24,7 @@ const OurSkillsInNumbers = () => {
           нове життя.
         </p>
       </div>
+      <NumberCard cardNumber="24" cardText="Хвостиків знайшли дім" />
     </section>
   );
 };
