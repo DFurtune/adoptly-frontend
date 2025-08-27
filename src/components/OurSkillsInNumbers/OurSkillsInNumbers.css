@@ -22,4 +22,11 @@
     font-size: 18px;
     font-weight: 500;
   }
+
+  & .cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 27.5px 0;
+  }
 }

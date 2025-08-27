@@ -1,5 +1,6 @@
 import NumberCard from '../NumberCard/NumberCard';
 import './OurSkillsInNumbers.css';
+import { NUMBER_CARD_DATA } from '../../constants/NUMBER_CARD_DATA';
 
 const OurSkillsInNumbers = () => {
   return (
@@ -24,7 +25,15 @@ const OurSkillsInNumbers = () => {
           нове життя.
         </p>
       </div>
-      <NumberCard cardNumber="24" cardText="Хвостиків знайшли дім" />
+      <div className="cards">
+        {NUMBER_CARD_DATA.map((card, index) => (
+          <NumberCard
+            key={index}
+            cardNumber={card.cardNumber}
+            cardText={card.cardText}
+          />
+        ))}
+      </div>
     </section>
   );
 };
