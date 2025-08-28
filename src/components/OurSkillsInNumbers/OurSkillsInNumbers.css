@@ -2,31 +2,30 @@
   background-color: #ecf1ff;
   border-radius: 44px;
   padding: 100px 0;
+}
+.our-skills-in-numbers h2 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 74px;
+  line-height: 1.2;
+}
 
-  & h2 {
-    text-align: center;
-    font-weight: 800;
-    font-size: 74px;
-    line-height: 1.2;
-  }
+.our-skills-in-numbers .text-grid {
+  padding: 32px 177px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 32px;
+}
 
-  .text-grid {
-    padding: 32px 177px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    column-gap: 32px;
-  }
+.our-skills-in-numbers p {
+  font-size: 18px;
+  font-weight: 500;
+}
 
-  & p {
-    font-size: 18px;
-    font-weight: 500;
-  }
-
-  & .cards {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    padding: 27.5px 0;
-  }
+.our-skills-in-numbers .cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 27.5px 0;
 }
