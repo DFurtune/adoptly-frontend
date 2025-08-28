@@ -65,6 +65,15 @@
 background: #fff;
   fill: #ff8c00;
 }
+
+.btnUp:hover {
+  background: #e8e8e8;
+  transform: translateY(-1px);
+}
+
+.btnUp:active {
+  transform: translateY(0);
+}
 .divider {
   border-top: 1px solid #b5c6f3;
 
