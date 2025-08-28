@@ -1,0 +1,88 @@
+.footer {
+  background: #ecf1ff;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.nav-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-logo {
+  width: 246px;
+  height: 34.7px;
+  display: block;
+  overflow: visible;
+}
+.item-nav {
+  font-family: var(--second-family);
+  font-weight: 600;
+  font-size: 16px;
+  color: #515151;
+  margin-bottom: 12px;
+}
+
+.item-nav:hover {
+  color: #ff8c00;
+}
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+.containerBtn {
+  display: flex;
+  justify-content: end;
+  margin: 32px 0;
+}
+
+.btn-footer {
+  border-radius: 40px;
+  border: 1px solid transparent;
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-footer:hover {
+  background: #e8e8e8;
+  transform: translateY(-1px);
+}
+
+.btn-footer:active {
+  transform: translateY(0);
+}
+
+.btnUp {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 284px;
+
+background: #fff;
+  fill: #ff8c00;
+}
+
+.btnUp:hover {
+  background: #e8e8e8;
+  transform: translateY(-1px);
+}
+
+.btnUp:active {
+  transform: translateY(0);
+}
+.divider {
+  border-top: 1px solid #b5c6f3;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.police-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
