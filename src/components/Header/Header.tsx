@@ -27,8 +27,7 @@ const Header = () => {
             <Icon id="icon-user" size={16} />
           </button>
 
-          <button type="button" className="btn" title="Favourite"></button>
-          <button type="button" className="btn" title="Username"></button>
+
 
         </div>
       </div>
