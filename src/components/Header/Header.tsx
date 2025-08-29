@@ -4,7 +4,7 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className="header" id='header'>
       <div className="header_inner">
         <div>
           <Navigation />
