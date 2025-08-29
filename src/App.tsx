@@ -1,18 +1,16 @@
 import HomePage from './pages/HomePage/HomePage';
-
-
-
+import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <div>
-      <HomePage />
-
-
+    <>
+      <Header />
+      <main>
+        <HomePage />
+      </main>
       <Footer />
-
-    </div>
+    </>
   );
 }
 

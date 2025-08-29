@@ -1,8 +1,13 @@
 .footer {
   width: 100%;
   background: #ecf1ff;
+  border-radius: 44px 44px 0 0;
+}
+
+.footer-content {
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 60px var(--container-padding) 40px;
-  
 }
 
 .nav-footer {
