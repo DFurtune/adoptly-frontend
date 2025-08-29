@@ -38,28 +38,31 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="buttons">
-              <button className="btn-footer" type="button" title="Instagram">
+            <nav className="buttons">
+              <a className="btn-footer" type="button" title="Instagram" target='_blank' href="https://www.instagram.com" aria-label='Instagram'>
                 <Icon id="icon-instagram" size={25} />
-              </button>
-              <button className="btn-footer" type="button" title="Facebook">
+              </a>
+              <a className="btn-footer" type="button" title="Facebook" target='_blank' href="https://www.facebook.com" aria-label='Facebook'>
                 <Icon id="icon-facebook" size={25} />
-              </button>
-              <button className="btn-footer" type="button" title="TikTok">
+              </a>
+              <a className="btn-footer" type="button" title="TikTok" target='_blank' href="https://www.tiktok.com" aria-label='TikTok'>
                 <Icon id="icon-tiktok" size={25} />
-              </button>
-            </div>
+              </a>
+            </nav>
           </div>
           <div className="containerBtn">
-            <button className="btnUp" type="button" title="up" onClick={scrollToHeader}>
+            <a className="btnUp" href='#header' aria-label='Back to top' onClick={(e) => {
+              e.preventDefault();
+              scrollToHeader();
+            }}>
               <Icon id="icon-up" className="icon-up" size={16} />
-            </button>
+            </a>
           </div>
           <hr className="divider" />
           <ul className="police-list">
-            <li>Privacy Policy |</li>
-            <li>Terms & Condition |</li>
-            <li>Sitemap</li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms & Conditions</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
           </ul>
         </div>
       </div>
