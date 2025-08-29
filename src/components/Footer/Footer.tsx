@@ -4,7 +4,7 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer>
-      <div className="container footer">
+      <div className="footer">
         <div className="nav-footer">
           <Icon id="icon-Logo" className="footer-logo" />
 
