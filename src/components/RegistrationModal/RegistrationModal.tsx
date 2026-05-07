@@ -6,6 +6,7 @@ import { Icon } from '../Icon/Icon';
 import Button from '../Button/Button';
 import GoogleAuthButton from '../GoogleAuthButton/GoogleAuthButton';
 import FormDivider from '../FormDivider/FormDivider';
+import { registerUser } from '../../services/auth';
 import './RegistrationModal.css';
 
 const PasswordStrengthBar = lazy(
@@ -60,9 +61,20 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
     }
   }, [isOpen, reset]);
 
-  const onSubmit = (_data: RegistrationFormData) => {
+  const onSubmit = async (data: RegistrationFormData) => {
     // TODO: integrate with backend API
-    onClose();
+    try {
+      const response = await registerUser({
+        email: data.email,
+        password: data.password,
+        role: data.role,
+      });
+      console.log('Registration successful:', response);
+
+      onClose();
+    } catch (error) {
+      console.error('Registration failed:', error);
+    }
   };
 
   return (
