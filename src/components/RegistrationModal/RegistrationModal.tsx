@@ -8,6 +8,7 @@ import GoogleAuthButton from '../GoogleAuthButton/GoogleAuthButton';
 import FormDivider from '../FormDivider/FormDivider';
 import EmailConfirmModal from '../EmailConfirmModal/EmailConfirmModal';
 import { registerUser } from '../../services/auth';
+import { isApiError } from '../../services/api';
 import './RegistrationModal.css';
 
 const PasswordStrengthBar = lazy(
@@ -34,6 +35,7 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const [confirmEmail, setConfirmEmail] = useState<string | null>(null);
+  const [serverError, setServerError] = useState<string | null>(null);
 
   const {
     register,
@@ -41,7 +43,7 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
     reset,
     watch,
     trigger,
-
+    setError,
     formState: { errors },
   } = useForm<RegistrationFormData>();
 
@@ -60,6 +62,7 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
     if (isOpen) {
       reset();
       setShowPassword(false);
+      setServerError(null);
     }
   }, [isOpen, reset]);
 
@@ -73,6 +76,14 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
       setConfirmEmail(data.email);
       onClose();
     } catch (error) {
+      if (isApiError(error) && error.status === 409) {
+        setError('email', {
+          type: 'server',
+          message: t('registration.email_in_use'),
+        });
+        return;
+      }
+      setServerError(t('registration.server_error'));
       console.error('Registration failed:', error);
     }
   };
@@ -191,7 +202,11 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
               <PasswordStrengthBar password={password} />
             </Suspense>
           </div>
-
+          {serverError && (
+            <span className="reg-form-error" role="alert">
+              {serverError}
+            </span>
+          )}
           <Button type="submit" variant="primary" maxWidth="100%" height={56}>
             {t('registration.submit')}
           </Button>

@@ -9,6 +9,15 @@ export type ApiError = {
   data?: unknown;
 };
 
+export const isApiError = (error: unknown): error is ApiError => {
+  return (
+    typeof error === 'object' &&
+    error !== null &&
+    'type' in error &&
+    'message' in error
+  );
+};
+
 export const apiClient = axios.create({
   baseURL: API_URL,
   headers: {
