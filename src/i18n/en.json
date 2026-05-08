@@ -176,6 +176,7 @@
     "email_invalid": "Please enter a valid email address",
     "password_required": "Please enter a password",
     "submit": "Register",
+    "submitting": "Registering...",
     "has_account": "Already have an account?",
     "login_link": "Log in",
     "signUpWith": "Sign up with",

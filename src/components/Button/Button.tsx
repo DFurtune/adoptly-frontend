@@ -15,6 +15,7 @@ interface ButtonProps {
   heightMobile?: string | number;
   style?: React.CSSProperties;
   type?: 'button' | 'submit';
+  disabled?: boolean;
 }
 
 const toPx = (v?: number | string) => (typeof v === 'number' ? `${v}px` : v);
@@ -29,6 +30,7 @@ const Button: React.FC<ButtonProps> = ({
   heightMobile,
   style,
   type = 'button',
+  disabled = false,
 }) => {
   const cssVars = {
     '--btn-max-width': toPx(maxWidth) ?? undefined,
@@ -41,6 +43,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       type={type}
       onClick={onClick}
+      disabled={disabled}
       className={`button button--${variant}`}
       style={{ ...cssVars, ...style }}
     >

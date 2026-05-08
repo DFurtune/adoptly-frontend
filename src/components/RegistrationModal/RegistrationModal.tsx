@@ -44,7 +44,7 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
     watch,
     trigger,
     setError,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<RegistrationFormData>();
 
   const selectedRole = watch('role');
@@ -207,8 +207,16 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
               {serverError}
             </span>
           )}
-          <Button type="submit" variant="primary" maxWidth="100%" height={56}>
-            {t('registration.submit')}
+          <Button
+            type="submit"
+            variant="primary"
+            maxWidth="100%"
+            height={56}
+            disabled={isSubmitting}
+          >
+            {isSubmitting
+              ? t('registration.submitting')
+              : t('registration.submit')}
           </Button>
         </form>
         <p className="reg-form-login-text">
