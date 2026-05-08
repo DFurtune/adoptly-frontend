@@ -2,6 +2,13 @@ import axios from 'axios';
 
 const API_URL: string = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
+export type ApiError = {
+  type: 'network' | 'server' | 'client';
+  status?: number;
+  message: string;
+  data?: unknown;
+};
+
 export const apiClient = axios.create({
   baseURL: API_URL,
   headers: {
@@ -20,11 +27,27 @@ apiClient.interceptors.request.use(config => {
 apiClient.interceptors.response.use(
   response => response,
   error => {
-    if (error.response?.status === 401) {
-      // TODO: refresh token logic
-      localStorage.removeItem('accessToken');
-      // Optionally, you can also redirect to the login page here
+    if (!error.response) {
+      return Promise.reject<ApiError>({
+        type: 'network',
+        message: 'Network error. Please check your connection.',
+      });
     }
-    return Promise.reject(error);
+    if (error.response.status >= 500) {
+      return Promise.reject<ApiError>({
+        type: 'server',
+        status: error.response.status,
+        message: 'Server error. Please try again later.',
+      });
+    }
+    if (error.response.status === 401) {
+      // TODO: handle expired token (clear storage + redirect to login)
+    }
+    return Promise.reject<ApiError>({
+      type: 'client',
+      status: error.response.status,
+      message: error.response.data?.message || 'An error occurred.',
+      data: error.response.data,
+    });
   }
 );
