@@ -67,6 +67,7 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
   }, [isOpen, reset]);
 
   const onSubmit = async (data: RegistrationFormData) => {
+    setServerError(null);
     try {
       await registerUser({
         email: data.email,
@@ -79,11 +80,11 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
       if (isApiError(error) && error.status === 409) {
         setError('email', {
           type: 'server',
-          message: t('registration.email_in_use'),
+          message: t('registration.emailInUse'),
         });
         return;
       }
-      setServerError(t('registration.server_error'));
+      setServerError(t('registration.serverError'));
       console.error('Registration failed:', error);
     }
   };

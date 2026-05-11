@@ -9,6 +9,7 @@ export const registerUser = async (data: {
     email: data.email,
     password: data.password,
     role: data.role === 'shelter' ? 'SHELTER' : 'USER',
+    //Backend returns 409 if any of these fiedls are missing
     firstName: '',
     lastName: '',
     phone: '',

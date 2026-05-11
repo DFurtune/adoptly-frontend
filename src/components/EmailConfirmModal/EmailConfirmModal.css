@@ -7,14 +7,14 @@
 .email-confirm-title {
   font-size: 24px;
   font-weight: 800;
-  color: #091a49;
+  color: var(--title-color-dark);
 }
 
 .email-confirm-message {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
-  color: #091a49;
+  color: var(--title-color-dark);
   text-align: center;
   margin: 32px 0;
 }
