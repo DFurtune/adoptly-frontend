@@ -18,6 +18,7 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.jest,
+        process: 'readonly',
       },
     },
     plugins: {
