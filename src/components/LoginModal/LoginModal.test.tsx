@@ -1,5 +1,12 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import LoginModal from './LoginModal';
+import { loginUser } from '../../services/auth';
+
+jest.mock('../../services/auth', () => ({
+  loginUser: jest.fn(),
+}));
+
+const mockedLoginUser = loginUser as jest.MockedFunction<typeof loginUser>;
 
 jest.mock('../Icon/Icon', () => ({
   Icon: ({ id, className }: { id: string; className?: string }) => (
@@ -14,6 +21,21 @@ describe('LoginModal', () => {
   beforeEach(() => {
     onClose.mockClear();
     onSwitchToRegister.mockClear();
+    mockedLoginUser.mockReset();
+    mockedLoginUser.mockResolvedValue({
+      accessToken: 'token',
+      refreshToken: 'refresh',
+      expiresIn: 86400000,
+      userInfo: {
+        id: 1,
+        email: 'test@example.com',
+        firstName: '',
+        lastName: '',
+        profileImageUrl: null,
+        location: '',
+        role: 'ROLE_USER',
+      },
+    });
   });
 
   test('renders nothing when closed', () => {
@@ -127,5 +149,99 @@ describe('LoginModal', () => {
 
     fireEvent.click(screen.getByText('login.register_link'));
     expect(onSwitchToRegister).toHaveBeenCalledTimes(1);
+  });
+
+  test('shows invalid credentials error on 401', async () => {
+    mockedLoginUser.mockRejectedValueOnce({
+      type: 'client',
+      status: 401,
+      message: 'Bad credentials',
+    });
+
+    render(
+      <LoginModal
+        isOpen={true}
+        onClose={onClose}
+        onSwitchToRegister={onSwitchToRegister}
+      />
+    );
+
+    fireEvent.change(screen.getByPlaceholderText('login.email_placeholder'), {
+      target: { value: 'test@example.com' },
+    });
+    fireEvent.change(
+      screen.getByPlaceholderText('login.password_placeholder'),
+      { target: { value: 'wrongpass' } }
+    );
+    fireEvent.click(screen.getByText('login.submit'));
+
+    await waitFor(() => {
+      expect(
+        screen.getByText('login.invalidCredentials')
+      ).toBeInTheDocument();
+    });
+
+    expect(onClose).not.toHaveBeenCalled();
+  });
+
+  test('shows account disabled error on 403', async () => {
+    mockedLoginUser.mockRejectedValueOnce({
+      type: 'client',
+      status: 403,
+      message: 'User is disabled',
+    });
+
+    render(
+      <LoginModal
+        isOpen={true}
+        onClose={onClose}
+        onSwitchToRegister={onSwitchToRegister}
+      />
+    );
+
+    fireEvent.change(screen.getByPlaceholderText('login.email_placeholder'), {
+      target: { value: 'inactive@example.com' },
+    });
+    fireEvent.change(
+      screen.getByPlaceholderText('login.password_placeholder'),
+      { target: { value: 'password123' } }
+    );
+    fireEvent.click(screen.getByText('login.submit'));
+
+    await waitFor(() => {
+      expect(screen.getByText('login.accountDisabled')).toBeInTheDocument();
+    });
+
+    expect(onClose).not.toHaveBeenCalled();
+  });
+
+  test('shows generic server error on network error', async () => {
+    mockedLoginUser.mockRejectedValueOnce({
+      type: 'network',
+      message: 'Network error',
+    });
+
+    render(
+      <LoginModal
+        isOpen={true}
+        onClose={onClose}
+        onSwitchToRegister={onSwitchToRegister}
+      />
+    );
+
+    fireEvent.change(screen.getByPlaceholderText('login.email_placeholder'), {
+      target: { value: 'test@example.com' },
+    });
+    fireEvent.change(
+      screen.getByPlaceholderText('login.password_placeholder'),
+      { target: { value: 'password123' } }
+    );
+    fireEvent.click(screen.getByText('login.submit'));
+
+    await waitFor(() => {
+      expect(screen.getByText('login.serverError')).toBeInTheDocument();
+    });
+
+    expect(onClose).not.toHaveBeenCalled();
   });
 });
