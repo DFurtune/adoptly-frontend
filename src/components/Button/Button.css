@@ -39,6 +39,16 @@
   color: var(--color-text-dark);
 }
 
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button:disabled:hover {
+  background-color: var(--color-primary);
+  box-shadow: none;
+}
+
 @media screen and (max-width: 768px) {
   .button {
     max-width: var(--btn-max-width-mobile, var(--btn-max-width));

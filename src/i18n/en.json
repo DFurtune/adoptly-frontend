@@ -176,10 +176,17 @@
     "email_invalid": "Please enter a valid email address",
     "password_required": "Please enter a password",
     "submit": "Register",
+    "submitting": "Registering...",
     "has_account": "Already have an account?",
     "login_link": "Log in",
     "signUpWith": "Sign up with",
-    "password_min_length": "Password must be at least 8 characters long"
+    "password_min_length": "Password must be at least 8 characters long",
+    "emailInUse": "This email is already in use. Please use a different email or log in.",
+    "serverError": "Server error. Please try again later.",
+    "confirmEmail": {
+      "title": "Confirm your email",
+      "message": "We have sent a confirmation email to {{email}}. Please click the link in the email to complete your registration."
+    }
   },
   "passwordStrength": {
     "weak": "Weak",
