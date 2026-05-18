@@ -176,9 +176,7 @@ describe('LoginModal', () => {
     fireEvent.click(screen.getByText('login.submit'));
 
     await waitFor(() => {
-      expect(
-        screen.getByText('login.invalidCredentials')
-      ).toBeInTheDocument();
+      expect(screen.getByText('login.invalidCredentials')).toBeInTheDocument();
     });
 
     expect(onClose).not.toHaveBeenCalled();
@@ -214,8 +212,7 @@ describe('LoginModal', () => {
 
     expect(onClose).not.toHaveBeenCalled();
   });
-
-  test('shows generic server error on network error', async () => {
+  test('shows network error message on network error', async () => {
     mockedLoginUser.mockRejectedValueOnce({
       type: 'network',
       message: 'Network error',
@@ -239,7 +236,7 @@ describe('LoginModal', () => {
     fireEvent.click(screen.getByText('login.submit'));
 
     await waitFor(() => {
-      expect(screen.getByText('login.serverError')).toBeInTheDocument();
+      expect(screen.getByText('login.networkError')).toBeInTheDocument();
     });
 
     expect(onClose).not.toHaveBeenCalled();

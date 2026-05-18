@@ -53,6 +53,11 @@ const LoginModal: React.FC<LoginModalProps> = ({
       onClose();
     } catch (error) {
       if (isApiError(error)) {
+        if (error.type === 'network') {
+          setServerError(t('login.networkError'));
+          console.error('Network error during login:', error);
+          return;
+        }
         if (error.status === 401) {
           setServerError(t('login.invalidCredentials'));
           return;
