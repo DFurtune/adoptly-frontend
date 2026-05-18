@@ -1,7 +1,7 @@
 import axios from 'axios';
+import { HTTP_STATUS } from '../constants/HTTP_STATUS';
 
-const API_URL: string =
-  process.env.VITE_API_URL || 'http://localhost:3000';
+const API_URL: string = process.env.VITE_API_URL || 'http://localhost:3000';
 
 export type ApiError = {
   type: 'network' | 'server' | 'client';
@@ -43,14 +43,14 @@ apiClient.interceptors.response.use(
         message: 'Network error. Please check your connection.',
       });
     }
-    if (error.response.status >= 500) {
+    if (error.response.status >= HTTP_STATUS.SERVER_ERROR) {
       return Promise.reject<ApiError>({
         type: 'server',
         status: error.response.status,
         message: 'Server error. Please try again later.',
       });
     }
-    if (error.response.status === 401) {
+    if (error.response.status === HTTP_STATUS.UNAUTHORIZED) {
       // TODO: handle expired token (clear storage + redirect to login)
     }
     return Promise.reject<ApiError>({

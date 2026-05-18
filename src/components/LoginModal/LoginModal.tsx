@@ -9,6 +9,7 @@ import FormDivider from '../FormDivider/FormDivider';
 import './LoginModal.css';
 import { loginUser } from '../../services/auth';
 import { isApiError } from '../../services/api';
+import { HTTP_STATUS } from '../../constants/HTTP_STATUS';
 
 type LoginFormData = {
   email: string;
@@ -58,11 +59,11 @@ const LoginModal: React.FC<LoginModalProps> = ({
           console.error('Network error during login:', error);
           return;
         }
-        if (error.status === 401) {
+        if (error.status === HTTP_STATUS.UNAUTHORIZED) {
           setServerError(t('login.invalidCredentials'));
           return;
         }
-        if (error.status === 403) {
+        if (error.status === HTTP_STATUS.FORBIDDEN) {
           setServerError(t('login.accountDisabled'));
           return;
         }
