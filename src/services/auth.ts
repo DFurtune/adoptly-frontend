@@ -1,4 +1,4 @@
-import { apiClient } from './api';
+import { apiClient, ApiError } from './api';
 
 export type LoginResponse = {
   accessToken: string;
@@ -41,6 +41,15 @@ export const loginUser = async (data: {
     email: data.email,
     password: data.password,
   });
+
+  const { accessToken, refreshToken, userInfo } = response.data;
+  if (!accessToken || !refreshToken || !userInfo) {
+    throw {
+      type: 'server',
+      message:
+        'Invalid login response: missing accessToken, refreshToken or userInfo',
+    } as ApiError;
+  }
 
   localStorage.setItem('accessToken', response.data.accessToken);
   localStorage.setItem('refreshToken', response.data.refreshToken);
