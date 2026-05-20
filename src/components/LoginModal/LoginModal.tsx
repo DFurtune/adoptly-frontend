@@ -7,6 +7,9 @@ import Button from '../Button/Button';
 import GoogleAuthButton from '../GoogleAuthButton/GoogleAuthButton';
 import FormDivider from '../FormDivider/FormDivider';
 import './LoginModal.css';
+import { loginUser } from '../../services/auth';
+import { isApiError } from '../../services/api';
+import { HTTP_STATUS } from '../../constants/HTTP_STATUS';
 
 type LoginFormData = {
   email: string;
@@ -27,24 +30,47 @@ const LoginModal: React.FC<LoginModalProps> = ({
 }) => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<LoginFormData>();
 
   useEffect(() => {
     if (isOpen) {
       reset();
       setShowPassword(false);
+      setServerError(null);
     }
   }, [isOpen, reset]);
 
-  const onSubmit = (data: LoginFormData) => {
-    console.log(data);
-    onClose();
+  const onSubmit = async (data: LoginFormData) => {
+    setServerError(null);
+    try {
+      await loginUser({ email: data.email, password: data.password });
+      onClose();
+    } catch (error) {
+      if (isApiError(error)) {
+        if (error.type === 'network') {
+          setServerError(t('login.networkError'));
+          console.error('Network error during login:', error);
+          return;
+        }
+        if (error.status === HTTP_STATUS.UNAUTHORIZED) {
+          setServerError(t('login.invalidCredentials'));
+          return;
+        }
+        if (error.status === HTTP_STATUS.FORBIDDEN) {
+          setServerError(t('login.accountDisabled'));
+          return;
+        }
+      }
+      setServerError(t('login.serverError'));
+      console.error('Login error:', error);
+    }
   };
 
   return (
@@ -116,9 +142,19 @@ const LoginModal: React.FC<LoginModalProps> = ({
             </button>
           </div>
         </div>
-
-        <Button type="submit" variant="primary" maxWidth="100%" height={56}>
-          {t('login.submit')}
+        {serverError && (
+          <span className="login-form-error" role="alert">
+            {serverError}
+          </span>
+        )}
+        <Button
+          type="submit"
+          variant="primary"
+          maxWidth="100%"
+          height={56}
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? t('login.submitting') : t('login.submit')}
         </Button>
       </form>
       <p className="login-form-register-text">
