@@ -1,0 +1,11 @@
+.shelter-layout {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  width: 100%;
+}
+
+.shelter-content {
+  flex: 1;
+  display: flex;
+}

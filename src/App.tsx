@@ -15,6 +15,11 @@ import Footer from './components/Footer/Footer';
 import PetsPage from './pages/PetsPage/PetsPage';
 import PolicyPage from './pages/PolicyPage/PolicyPage';
 import LanguageLayout from './components/LanguageLayout/LanguageLayout';
+import ShelterProfilePage from './pages/shelter/ShelterProfilePage/ShelterProfilePage';
+import ShelterLayout from './components/ShelterLayout/ShelterLayout';
+import ShelterPetsPage from './pages/shelter/ShelterPetsPage/ShelterPetsPage';
+import ShelterApplicationsPage from './pages/shelter/ShelterApplicationsPage/ShelterApplicationsPage';
+import ShelterAnalyticsPage from './pages/shelter/ShelterAnalyticsPage/ShelterAnalyticsPage';
 
 function App() {
   return (
@@ -32,6 +37,15 @@ function App() {
             <Route path="pets" element={<PetsPage />} />
             <Route path="privacy-policy" element={<PolicyPage />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="shelter" element={<ShelterLayout />}>
+              <Route path="profile" element={<ShelterProfilePage />} />
+              <Route path="pets" element={<ShelterPetsPage />} />
+              <Route
+                path="applications"
+                element={<ShelterApplicationsPage />}
+              />
+              <Route path="analytics" element={<ShelterAnalyticsPage />} />
+            </Route>
           </Route>
         </Routes>
       </main>
