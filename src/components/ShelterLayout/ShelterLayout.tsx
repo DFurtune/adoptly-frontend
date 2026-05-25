@@ -7,7 +7,9 @@ const ShelterLayout = () => {
     <div className="container shelter-layout">
       <ShelterSidebar />
       <section className="shelter-content">
-        <Outlet />
+        <div className="shelter-page">
+          <Outlet />
+        </div>
       </section>
     </div>
   );
