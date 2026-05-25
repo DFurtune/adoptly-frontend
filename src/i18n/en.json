@@ -207,5 +207,28 @@
     "no_account": "Don't have an account?",
     "register_link": "Register",
     "signInWith": "Sign in with"
+  },
+  "shelter": {
+    "menu": {
+      "arriaLabel": "Shelter cabinet navigation",
+      "profile": "Shelter Profile",
+      "pets": "Animal Cards",
+      "applications": "Adoption Applications",
+      "analytics": "Analytics"
+    },
+    "pages": {
+      "profile": {
+        "title": "Shelter Profile"
+      },
+      "pets": {
+        "title": "Animal Cards"
+      },
+      "applications": {
+        "title": "Adoption Applications"
+      },
+      "analytics": {
+        "title": "Analytics"
+      }
+    }
   }
 }

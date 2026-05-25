@@ -209,5 +209,28 @@
     "no_account": "Немає акаунту?",
     "register_link": "Реєстрація",
     "signInWith": "Увійти через"
+  },
+  "shelter": {
+    "menu": {
+      "ariaLabel": "Меню кабінету притулку",
+      "profile": "Профіль притулку",
+      "pets": "Картки тварин",
+      "applications": "Заявки на адопцію",
+      "analytics": "Аналітика"
+    },
+    "pages": {
+      "profile": {
+        "title": "Профіль притулку"
+      },
+      "pets": {
+        "title": "Картки тварин"
+      },
+      "applications": {
+        "title": "Заявки на адопцію"
+      },
+      "analytics": {
+        "title": "Аналітика"
+      }
+    }
   }
 }
