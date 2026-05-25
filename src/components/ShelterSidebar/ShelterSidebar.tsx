@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './ShelterSidebar.css';
 
 const ShelterSidebar = () => {
@@ -7,16 +7,16 @@ const ShelterSidebar = () => {
       <h2>Shelter Name</h2>
       <ul>
         <li>
-          <Link to="profile">Профіль притулку</Link>
+          <NavLink to="profile">Профіль притулку</NavLink>
         </li>
         <li>
-          <Link to="pets">Картки тварин</Link>
+          <NavLink to="pets">Картки тварин</NavLink>
         </li>
         <li>
-          <Link to="applications">Заявки на адопцію</Link>
+          <NavLink to="applications">Заявки на адопцію</NavLink>
         </li>
         <li>
-          <Link to="analytics">Аналітика</Link>
+          <NavLink to="analytics">Аналітика</NavLink>
         </li>
       </ul>
     </nav>
