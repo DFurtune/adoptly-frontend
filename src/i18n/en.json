@@ -210,7 +210,7 @@
   },
   "shelter": {
     "menu": {
-      "arriaLabel": "Shelter cabinet navigation",
+      "ariaLabel": "Shelter cabinet navigation",
       "profile": "Shelter Profile",
       "pets": "Animal Cards",
       "applications": "Adoption Applications",
