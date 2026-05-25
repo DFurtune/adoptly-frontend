@@ -36,8 +36,8 @@ function App() {
             <Route path="contacts" element={<ContactPage />} />
             <Route path="pets" element={<PetsPage />} />
             <Route path="privacy-policy" element={<PolicyPage />} />
-            <Route path="*" element={<NotFound />} />
             <Route path="shelter" element={<ShelterLayout />}>
+              <Route index element={<Navigate to="profile" replace />} />
               <Route path="profile" element={<ShelterProfilePage />} />
               <Route path="pets" element={<ShelterPetsPage />} />
               <Route
@@ -46,6 +46,7 @@ function App() {
               />
               <Route path="analytics" element={<ShelterAnalyticsPage />} />
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </main>
