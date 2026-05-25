@@ -1,5 +1,13 @@
+import './ShelterAnalyticsPage.css';
+import { useTranslation } from 'react-i18next';
+
 const ShelterAnalyticsPage = () => {
-  return <h1>Shelter Analytics</h1>;
+  const { t } = useTranslation();
+  return (
+    <div className="shelter-analytics-page">
+      <h1>{t('shelter.pages.analytics.title')}</h1>
+    </div>
+  );
 };
 
 export default ShelterAnalyticsPage;

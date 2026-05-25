@@ -1,11 +1,11 @@
-.shelter-profile-page {
+.shelter-applications-page {
   padding: 40px;
   border-radius: 44px;
   background-color: white;
   flex: 1;
 }
 
-.shelter-profile-page h1 {
+.shelter-applications-page h1 {
   font-size: 24px;
   font-weight: 800;
   line-height: 1.2;
