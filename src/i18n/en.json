@@ -206,7 +206,12 @@
     "submit": "Log in",
     "no_account": "Don't have an account?",
     "register_link": "Register",
-    "signInWith": "Sign in with"
+    "signInWith": "Sign in with",
+    "invalidCredentials": "Invalid email or password",
+    "accountDisabled": "Account not activated. Please check your email for activation.",
+    "serverError": "Server error. Please try again later.",
+    "networkError": "Network error. Please check your internet connection and try again.",
+    "submitting": "Logging in..."
   },
   "shelter": {
     "menu": {

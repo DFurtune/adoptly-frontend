@@ -1,4 +1,4 @@
-import { registerUser } from './auth';
+import { registerUser, loginUser, type LoginResponse } from './auth';
 import { apiClient } from './api';
 
 jest.mock('./api', () => ({
@@ -99,6 +99,102 @@ describe('registerUser', () => {
         password: 'password123',
         role: 'adopter',
       })
+    ).rejects.toEqual(error);
+  });
+});
+
+describe('loginUser', () => {
+  const successResponse: { data: LoginResponse } = {
+    data: {
+      accessToken: 'access-token-jwt',
+      refreshToken: 'refresh-token-uuid',
+      expiresIn: 86400000,
+      userInfo: {
+        id: 29,
+        email: 'user@example.com',
+        firstName: '',
+        lastName: '',
+        profileImageUrl: null,
+        location: '',
+        role: 'ROLE_USER',
+      },
+    },
+  };
+
+  beforeEach(() => {
+    mockedPost.mockReset();
+    localStorage.clear();
+    mockedPost.mockResolvedValue(successResponse);
+  });
+
+  test('posts to /auth/login endpoint with email and password', async () => {
+    await loginUser({ email: 'user@example.com', password: 'secret123' });
+
+    expect(mockedPost).toHaveBeenCalledTimes(1);
+    expect(mockedPost.mock.calls[0][0]).toBe('/auth/login');
+    expect(mockedPost.mock.calls[0][1]).toEqual({
+      email: 'user@example.com',
+      password: 'secret123',
+    });
+  });
+
+  test('stores accessToken in localStorage on success', async () => {
+    await loginUser({ email: 'user@example.com', password: 'secret123' });
+
+    expect(localStorage.getItem('accessToken')).toBe('access-token-jwt');
+  });
+
+  test('stores refreshToken in localStorage on success', async () => {
+    await loginUser({ email: 'user@example.com', password: 'secret123' });
+
+    expect(localStorage.getItem('refreshToken')).toBe('refresh-token-uuid');
+  });
+
+  test('stores userInfo as JSON in localStorage on success', async () => {
+    await loginUser({ email: 'user@example.com', password: 'secret123' });
+
+    const stored = localStorage.getItem('userInfo');
+    expect(stored).not.toBeNull();
+    expect(JSON.parse(stored!)).toEqual(successResponse.data.userInfo);
+  });
+
+  test('returns the LoginResponse data', async () => {
+    const result = await loginUser({
+      email: 'user@example.com',
+      password: 'secret123',
+    });
+
+    expect(result).toEqual(successResponse.data);
+  });
+
+  test('does not write to localStorage when request fails', async () => {
+    mockedPost.mockReset();
+    mockedPost.mockRejectedValueOnce({
+      type: 'client',
+      status: 401,
+      message: 'Bad credentials',
+    });
+
+    await expect(
+      loginUser({ email: 'user@example.com', password: 'wrong' })
+    ).rejects.toBeDefined();
+
+    expect(localStorage.getItem('accessToken')).toBeNull();
+    expect(localStorage.getItem('refreshToken')).toBeNull();
+    expect(localStorage.getItem('userInfo')).toBeNull();
+  });
+
+  test('propagates errors from apiClient', async () => {
+    const error = {
+      type: 'client',
+      status: 403,
+      message: 'User is disabled',
+    };
+    mockedPost.mockReset();
+    mockedPost.mockRejectedValueOnce(error);
+
+    await expect(
+      loginUser({ email: 'inactive@example.com', password: 'secret123' })
     ).rejects.toEqual(error);
   });
 });
