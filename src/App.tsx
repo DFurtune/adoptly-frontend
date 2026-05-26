@@ -1,3 +1,4 @@
+import { lazy } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,11 +16,20 @@ import Footer from './components/Footer/Footer';
 import PetsPage from './pages/PetsPage/PetsPage';
 import PolicyPage from './pages/PolicyPage/PolicyPage';
 import LanguageLayout from './components/LanguageLayout/LanguageLayout';
-import ShelterProfilePage from './pages/shelter/ShelterProfilePage/ShelterProfilePage';
 import ShelterLayout from './components/ShelterLayout/ShelterLayout';
-import ShelterPetsPage from './pages/shelter/ShelterPetsPage/ShelterPetsPage';
-import ShelterApplicationsPage from './pages/shelter/ShelterApplicationsPage/ShelterApplicationsPage';
-import ShelterAnalyticsPage from './pages/shelter/ShelterAnalyticsPage/ShelterAnalyticsPage';
+
+const ShelterProfilePage = lazy(
+  () => import('./pages/shelter/ShelterProfilePage/ShelterProfilePage')
+);
+const ShelterPetsPage = lazy(
+  () => import('./pages/shelter/ShelterPetsPage/ShelterPetsPage')
+);
+const ShelterApplicationsPage = lazy(
+  () => import('./pages/shelter/ShelterApplicationsPage/ShelterApplicationsPage')
+);
+const ShelterAnalyticsPage = lazy(
+  () => import('./pages/shelter/ShelterAnalyticsPage/ShelterAnalyticsPage')
+);
 
 function App() {
   return (

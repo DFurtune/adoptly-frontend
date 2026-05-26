@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import ShelterSidebar from '../ShelterSidebar/ShelterSidebar';
 import './ShelterLayout.css';
@@ -8,7 +9,9 @@ const ShelterLayout = () => {
       <ShelterSidebar />
       <section className="shelter-content">
         <div className="shelter-page">
-          <Outlet />
+          <Suspense fallback={null}>
+            <Outlet />
+          </Suspense>
         </div>
       </section>
     </div>
