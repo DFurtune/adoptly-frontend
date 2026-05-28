@@ -15,6 +15,7 @@ import Footer from './components/Footer/Footer';
 import PetsPage from './pages/PetsPage/PetsPage';
 import PolicyPage from './pages/PolicyPage/PolicyPage';
 import LanguageLayout from './components/LanguageLayout/LanguageLayout';
+import PetDetailPage from './pages/PetDetailPage/PetDetailPage';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="shelters" element={<SheltersPage />} />
             <Route path="contacts" element={<ContactPage />} />
             <Route path="pets" element={<PetsPage />} />
+            <Route path="pets/:id" element={<PetDetailPage />} />
             <Route path="privacy-policy" element={<PolicyPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
