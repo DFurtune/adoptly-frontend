@@ -19,7 +19,7 @@
     "breed": "Німецька вівчарка",
     "adoptionConditions": "Бажано приватний будинок або велика квартира.",
     "status": "AVAILABLE",
-    "shelter": { "id": 1, "name": "HelpDog&Cat" },
+    "shelter": { "id": 1, "name": "HelpDog&Cat", "location": "Київ" },
     "dateOfArrival": "2026-01-15"
   },
   {
@@ -39,7 +39,7 @@
     "treatedForParasites": true,
     "description": "Грайливе та лагідне кошеня. Любить гратися з іграшками й муркотіти на колінах. Привчене до лотка.",
     "status": "AVAILABLE",
-    "shelter": { "id": 1, "name": "HelpDog&Cat" },
+    "shelter": { "id": 1, "name": "HelpDog&Cat", "location": "Київ" },
     "dateOfArrival": "2026-03-02"
   },
   {
@@ -60,7 +60,7 @@
     "breed": "Метис",
     "adoptionConditions": "Без маленьких дітей на період відновлення.",
     "status": "MEDICAL",
-    "shelter": { "id": 2, "name": "Прихисток Лапа" },
+    "shelter": { "id": 2, "name": "Прихисток Лапа", "location": "Львів" },
     "dateOfArrival": "2026-04-10"
   },
   {
@@ -80,7 +80,7 @@
     "treatedForParasites": true,
     "description": "Допитливий і контактний кіт. Обожнює досліджувати все навколо та спати на сонці. Добре ладнає з іншими котами.",
     "status": "PENDING",
-    "shelter": { "id": 2, "name": "Прихисток Лапа" },
+    "shelter": { "id": 2, "name": "Прихисток Лапа", "location": "Львів" },
     "dateOfArrival": "2026-02-20"
   },
   {
@@ -103,7 +103,7 @@
     "breed": "Лабрадор",
     "adoptionConditions": "Підходить для родини з досвідом утримання собак.",
     "status": "AVAILABLE",
-    "shelter": { "id": 1, "name": "HelpDog&Cat" },
+    "shelter": { "id": 1, "name": "HelpDog&Cat", "location": "Київ" },
     "dateOfArrival": "2025-11-30"
   }
 ]

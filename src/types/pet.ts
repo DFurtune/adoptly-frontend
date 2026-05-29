@@ -18,6 +18,6 @@ export type Pet = {
   breed?: string;
   adoptionConditions?: string;
   status: AnimalStatus;
-  shelter: { id: number; name: string };
+  shelter: { id: number; name: string; location: string };
   dateOfArrival?: string;
 };
