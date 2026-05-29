@@ -1,19 +1,63 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Pet } from '../../types/pet';
+import { getPetById } from '../../services/pets';
 import PetGallery from '../../components/PetGallery/PetGallery';
+import './PetDetailPage.css';
 
 const PetDetailPage: React.FC = () => {
-  const { id } = useParams();
+  const { t } = useTranslation();
+  const { id } = useParams<{ id: string }>();
+  const [pet, setPet] = useState<Pet | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+    getPetById(Number(id)).then(data => {
+      if (active) {
+        setPet(data);
+        setLoading(false);
+      }
+    });
+    return () => {
+      active = false;
+    };
+  }, [id]);
+
+  if (loading) return null;
+  if (!pet) return <p>{t('petDetail.notFound')}</p>;
+
   return (
     <div className="pet-detail-page container">
-      <PetGallery
-        images={[
-          'https://placedog.net/640/480?id=1',
-          'https://placedog.net/640/480?id=2',
-          'https://placedog.net/640/480?id=3',
-        ]}
-        altText={`Pet ${id}`}
-      />
+      <div className="pet-detail-page__gallery">
+        <PetGallery images={pet.photos} altText={pet.name} />
+      </div>
+      <div className="pet-detail-page__info">
+        <h1 className="pet-detail-page__name">{pet.name}</h1>
+        <div className="pet-detail-page__age-gender">
+          <p>{pet.age}</p>
+          <p>{pet.gender}</p>
+        </div>
+        <p className="pet-detail-page__location">
+          <span className="pet-detail-page__label">
+            {t('petDetail.location')}:
+          </span>
+          {pet.shelter.location}
+        </p>
+        <p className="pet-detail-page__shelter">
+          <span className="pet-detail-page__label">
+            {t('petDetail.shelter')}:
+          </span>
+          {pet.shelter.name}
+        </p>
+        <div className="pet-detail-page__description">
+          <p className="pet-detail-page__label">
+            {t('petDetail.description')}:
+          </p>
+          <p>{pet.description}</p>
+        </div>
+      </div>
     </div>
   );
 };

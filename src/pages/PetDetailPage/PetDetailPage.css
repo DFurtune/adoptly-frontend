@@ -1,0 +1,56 @@
+.pet-detail-page {
+  display: grid;
+  grid-template-columns: 555fr 765fr;
+  gap: 40px;
+}
+
+.pet-detail-page__gallery {
+  min-width: 0;
+}
+
+.pet-detail-page__name {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.pet-detail-page__age-gender {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.pet-detail-page__shelter,
+.pet-detail-page__location,
+.pet-detail-page__description {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.pet-detail-page__location {
+  margin-bottom: 12px;
+}
+
+.pet-detail-page__shelter {
+  margin-bottom: 24px;
+}
+
+.pet-detail-page__description {
+  line-height: 1.5;
+}
+
+.pet-detail-page__description > p:first-child {
+  margin-bottom: 8px;
+}
+
+.pet-detail-page__label {
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .pet-detail-page {
+    grid-template-columns: 1fr; /* одна колонка на мобільному */
+    gap: 24px;
+  }
+}

@@ -212,5 +212,11 @@
     "serverError": "Server error. Please try again later.",
     "networkError": "Network error. Please check your internet connection and try again.",
     "submitting": "Logging in..."
+  },
+  "petDetail": {
+    "shelter": "Shelter",
+    "location": "City",
+    "description": "Description",
+    "notFound": "Pet information not found"
   }
 }
