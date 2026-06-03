@@ -217,6 +217,10 @@
     "shelter": "Shelter",
     "location": "City",
     "description": "Description",
-    "notFound": "Pet information not found"
+    "notFound": "Pet information not found",
+    "ageMonths_one": "{{count}} month",
+    "ageMonths_other": "{{count}} months",
+    "ageYears_one": "{{count}} year",
+    "ageYears_other": "{{count}} years"
   }
 }

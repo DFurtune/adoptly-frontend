@@ -5,6 +5,7 @@ import { Pet } from '../../types/pet';
 import { getPetById } from '../../services/pets';
 import PetGallery from '../../components/PetGallery/PetGallery';
 import './PetDetailPage.css';
+import { formatAge } from '../../utils/formatAge';
 
 const PetDetailPage: React.FC = () => {
   const { t } = useTranslation();
@@ -36,7 +37,7 @@ const PetDetailPage: React.FC = () => {
       <div className="pet-detail-page__info">
         <h1 className="pet-detail-page__name">{pet.name}</h1>
         <div className="pet-detail-page__age-gender">
-          <p>{pet.age}</p>
+          <p>{formatAge(pet.age, t)}</p>
           <p>{pet.gender}</p>
         </div>
         <p className="pet-detail-page__location">
