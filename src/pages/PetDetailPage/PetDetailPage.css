@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: 555fr 765fr;
   gap: 40px;
+
+  --pet-detail-age-badge-bg: #e3caff;
 }
 
 .pet-detail-page__gallery {
@@ -19,6 +21,15 @@
   gap: 16px;
   margin-top: 12px;
   margin-bottom: 24px;
+}
+
+.pet-detail-page__age-gender p:first-child {
+  background-color: var(--pet-detail-age-badge-bg);
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
 }
 
 .pet-detail-page__shelter,
