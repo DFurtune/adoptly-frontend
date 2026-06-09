@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Pet } from '../../types/pet';
 import { getPetById } from '../../services/pets';
+import GenderIcon from '../../components/GenderIcon/GenderIcon';
 import PetGallery from '../../components/PetGallery/PetGallery';
 import './PetDetailPage.css';
 import { formatAge } from '../../utils/formatAge';
@@ -38,7 +39,7 @@ const PetDetailPage: React.FC = () => {
         <h1 className="pet-detail-page__name">{pet.name}</h1>
         <div className="pet-detail-page__age-gender">
           <p>{formatAge(pet.age, t)}</p>
-          <p>{pet.gender}</p>
+          <GenderIcon gender={pet.gender} />
         </div>
         <p className="pet-detail-page__location">
           <span className="pet-detail-page__label">

@@ -1,0 +1,20 @@
+.gender-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 29.5px;
+  border-radius: 12px;
+}
+
+.gender-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.gender-icon--male {
+  background-color: #a5bdff;
+}
+
+.gender-icon--female {
+  background-color: #ffa5e6;
+}

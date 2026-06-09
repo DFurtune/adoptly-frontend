@@ -25,11 +25,13 @@
 
 .pet-detail-page__age-gender p:first-child {
   background-color: var(--pet-detail-age-badge-bg);
-  padding: 8px 12px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
   border-radius: 12px;
   font-weight: 700;
   font-size: 18px;
-  line-height: 1;
 }
 
 .pet-detail-page__shelter,
