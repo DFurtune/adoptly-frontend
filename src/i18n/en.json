@@ -221,6 +221,13 @@
     "ageMonths_one": "{{count}} month",
     "ageMonths_other": "{{count}} months",
     "ageYears_one": "{{count}} year",
-    "ageYears_other": "{{count}} years"
+    "ageYears_other": "{{count}} years",
+    "vaccinated": "Vaccinated",
+    "spayedNeutered": "Spayed/Neutered",
+    "treatedForParasites": "Treated for parasites"
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No"
   }
 }

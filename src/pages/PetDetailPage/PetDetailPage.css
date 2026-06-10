@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 555fr 765fr;
   gap: 40px;
+  color: var(--title-color-dark);
 
   --pet-detail-age-badge-bg: #e3caff;
 }
@@ -36,16 +37,19 @@
 
 .pet-detail-page__shelter,
 .pet-detail-page__location,
+.pet-detail-page__health,
 .pet-detail-page__description {
   font-size: 20px;
   line-height: 1;
 }
 
-.pet-detail-page__location {
+.pet-detail-page__location,
+.pet-detail-page__health p {
   margin-bottom: 12px;
 }
 
-.pet-detail-page__shelter {
+.pet-detail-page__shelter,
+.pet-detail-page__health {
   margin-bottom: 24px;
 }
 

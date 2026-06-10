@@ -43,16 +43,36 @@ const PetDetailPage: React.FC = () => {
         </div>
         <p className="pet-detail-page__location">
           <span className="pet-detail-page__label">
-            {t('petDetail.location')}:
+            {t('petDetail.location')}:{' '}
           </span>
           {pet.shelter.location}
         </p>
         <p className="pet-detail-page__shelter">
           <span className="pet-detail-page__label">
-            {t('petDetail.shelter')}:
+            {t('petDetail.shelter')}:{' '}
           </span>
           {pet.shelter.name}
         </p>
+        <div className="pet-detail-page__health">
+          <p>
+            <span className="pet-detail-page__label">
+              {t('petDetail.vaccinated')}:{' '}
+            </span>
+            {pet.vaccinated ? t('common.yes') : t('common.no')}
+          </p>
+          <p>
+            <span className="pet-detail-page__label">
+              {t('petDetail.spayedNeutered')}:{' '}
+            </span>
+            {pet.spayedNeutered ? t('common.yes') : t('common.no')}
+          </p>
+          <p>
+            <span className="pet-detail-page__label">
+              {t('petDetail.treatedForParasites')}:{' '}
+            </span>
+            {pet.treatedForParasites ? t('common.yes') : t('common.no')}
+          </p>
+        </div>
         <div className="pet-detail-page__description">
           <p className="pet-detail-page__label">
             {t('petDetail.description')}:

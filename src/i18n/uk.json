@@ -225,6 +225,13 @@
     "ageMonths_many": "{{count}} місяців",
     "ageYears_one": "{{count}} рік",
     "ageYears_few": "{{count}} роки",
-    "ageYears_many": "{{count}} років"
+    "ageYears_many": "{{count}} років",
+    "vaccinated": "Вакциновано",
+    "spayedNeutered": "Стерелізовано",
+    "treatedForParasites": "Оброблено від паразитів"
+  },
+  "common": {
+    "yes": "Так",
+    "no": "Ні"
   }
 }
