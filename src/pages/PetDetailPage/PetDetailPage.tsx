@@ -3,10 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Pet } from '../../types/pet';
 import { getPetById } from '../../services/pets';
-import GenderIcon from '../../components/GenderIcon/GenderIcon';
-import PetGallery from '../../components/PetGallery/PetGallery';
-import Button from '../../components/Button/Button';
-import { formatAge } from '../../utils/formatAge';
+import PetDetailCard from '../../components/PetDetailCard/PetDetailCard';
 import './PetDetailPage.css';
 
 const PetDetailPage: React.FC = () => {
@@ -33,64 +30,7 @@ const PetDetailPage: React.FC = () => {
 
   return (
     <div className="pet-detail-page container">
-      <div className="pet-detail-page__gallery">
-        <PetGallery images={pet.photos} altText={pet.name} />
-      </div>
-      <div className="pet-detail-page__info">
-        <h1 className="pet-detail-page__name">{pet.name}</h1>
-        <div className="pet-detail-page__age-gender">
-          <p>{formatAge(pet.age, t)}</p>
-          <GenderIcon gender={pet.gender} />
-        </div>
-        <p className="pet-detail-page__location">
-          <span className="pet-detail-page__label">
-            {t('petDetail.location')}:{' '}
-          </span>
-          {pet.shelter.location}
-        </p>
-        <p className="pet-detail-page__shelter">
-          <span className="pet-detail-page__label">
-            {t('petDetail.shelter')}:{' '}
-          </span>
-          {pet.shelter.name}
-        </p>
-        <div className="pet-detail-page__health">
-          <p>
-            <span className="pet-detail-page__label">
-              {t('petDetail.vaccinated')}:{' '}
-            </span>
-            {pet.vaccinated ? t('common.yes') : t('common.no')}
-          </p>
-          <p>
-            <span className="pet-detail-page__label">
-              {t('petDetail.spayedNeutered')}:{' '}
-            </span>
-            {pet.spayedNeutered ? t('common.yes') : t('common.no')}
-          </p>
-          <p>
-            <span className="pet-detail-page__label">
-              {t('petDetail.treatedForParasites')}:{' '}
-            </span>
-            {pet.treatedForParasites ? t('common.yes') : t('common.no')}
-          </p>
-        </div>
-        <div className="pet-detail-page__description">
-          <p className="pet-detail-page__label">
-            {t('petDetail.description')}:
-          </p>
-          <p>{pet.description}</p>
-        </div>
-        <div className="pet-detail-page__actions">
-          {/* TODO: add navigation to adoption form */}
-          <Button variant="primary" height={75}>
-            {t('petDetail.adopt')}
-          </Button>
-          {/* TODO: add onClick handler */}
-          <Button variant="secondary" height={75}>
-            {t('petDetail.contactShelter')}
-          </Button>
-        </div>
-      </div>
+      <PetDetailCard pet={pet} />
     </div>
   );
 };
