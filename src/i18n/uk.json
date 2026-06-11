@@ -227,8 +227,10 @@
     "ageYears_few": "{{count}} роки",
     "ageYears_many": "{{count}} років",
     "vaccinated": "Вакциновано",
-    "spayedNeutered": "Стерелізовано",
-    "treatedForParasites": "Оброблено від паразитів"
+    "spayedNeutered": "Стерилізовано",
+    "treatedForParasites": "Оброблено від паразитів",
+    "adopt": "Хочу всиновити",
+    "contactShelter": "Написати притулку"
   },
   "common": {
     "yes": "Так",

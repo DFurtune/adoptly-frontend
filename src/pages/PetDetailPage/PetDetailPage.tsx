@@ -5,8 +5,9 @@ import { Pet } from '../../types/pet';
 import { getPetById } from '../../services/pets';
 import GenderIcon from '../../components/GenderIcon/GenderIcon';
 import PetGallery from '../../components/PetGallery/PetGallery';
-import './PetDetailPage.css';
+import Button from '../../components/Button/Button';
 import { formatAge } from '../../utils/formatAge';
+import './PetDetailPage.css';
 
 const PetDetailPage: React.FC = () => {
   const { t } = useTranslation();
@@ -78,6 +79,16 @@ const PetDetailPage: React.FC = () => {
             {t('petDetail.description')}:
           </p>
           <p>{pet.description}</p>
+        </div>
+        <div className="pet-detail-page__actions">
+          {/* TODO: add navigation to adoption form */}
+          <Button variant="primary" height={75}>
+            {t('petDetail.adopt')}
+          </Button>
+          {/* TODO: add onClick handler */}
+          <Button variant="secondary" height={75}>
+            {t('petDetail.contactShelter')}
+          </Button>
         </div>
       </div>
     </div>

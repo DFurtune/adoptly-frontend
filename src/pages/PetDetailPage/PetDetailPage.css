@@ -11,6 +11,11 @@
   min-width: 0;
 }
 
+.pet-detail-page__info {
+  display: flex;
+  flex-direction: column;
+}
+
 .pet-detail-page__name {
   font-size: 32px;
   font-weight: 800;
@@ -65,9 +70,19 @@
   font-weight: 800;
 }
 
+.pet-detail-page__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.pet-detail-page__actions button {
+  flex: 1;
+}
+
 @media (max-width: 768px) {
   .pet-detail-page {
-    grid-template-columns: 1fr; /* одна колонка на мобільному */
+    grid-template-columns: 1fr;
     gap: 24px;
   }
 }
