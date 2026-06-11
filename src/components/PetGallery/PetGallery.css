@@ -7,7 +7,6 @@
 
 .pet-gallery-main {
   width: 100%;
-  border-radius: 22px;
   overflow: hidden;
 }
 
@@ -16,6 +15,7 @@
   height: 527px;
   object-fit: cover;
   display: block;
+  border-radius: 22px;
 }
 
 .pet-gallery-thumbs-wrapper {
@@ -48,4 +48,37 @@
 .pet-gallery-nav-btn--disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.pet-gallery-main .swiper-pagination {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .pet-gallery-main img {
+    height: 350px;
+    border-radius: 12px;
+  }
+  .pet-gallery-thumbs-wrapper {
+    display: none;
+  }
+
+  .pet-gallery-main .swiper-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+    position: static;
+  }
+
+  .pet-gallery-main .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #d9d9d9;
+    opacity: 1;
+  }
+
+  .pet-gallery-main .swiper-pagination-bullet-active {
+    background: #6d82bd;
+  }
 }

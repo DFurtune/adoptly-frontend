@@ -85,4 +85,13 @@
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
+  .pet-detail-page__actions {
+    margin-top: 24px;
+    flex-direction: column;
+  }
+
+  .pet-detail-page__actions button {
+    flex: auto;
+  }
 }

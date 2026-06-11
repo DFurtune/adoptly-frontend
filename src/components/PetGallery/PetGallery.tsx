@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperClass } from 'swiper/types';
-import { Thumbs, FreeMode } from 'swiper/modules';
+import { Thumbs, FreeMode, Pagination } from 'swiper/modules';
 import 'swiper/css/bundle';
 import './PetGallery.css';
 import { useMediaQuery } from 'react-responsive';
@@ -33,7 +33,8 @@ const PetGallery: React.FC<PetGalleryProps> = ({ images, altText }) => {
   return (
     <div className="pet-gallery">
       <Swiper
-        modules={[Thumbs]}
+        modules={[Thumbs, Pagination]}
+        pagination
         thumbs={{ swiper: thumbsSwiper }}
         spaceBetween={4}
         onSwiper={swiper => {
