@@ -30,9 +30,9 @@
     "age": 5,
     "size": "SMALL",
     "photos": [
-      "https://placecats.net/640/480",
-      "https://placecats.net/641/480",
-      "https://placecats.net/642/480"
+      "https://loremflickr.com/640/480/cat?lock=7",
+      "https://loremflickr.com/640/480/cat?lock=2",
+      "https://loremflickr.com/640/480/cat?lock=3"
     ],
     "vaccinated": true,
     "spayedNeutered": false,
@@ -71,9 +71,9 @@
     "age": 8,
     "size": "SMALL",
     "photos": [
-      "https://placecats.net/643/480",
-      "https://placecats.net/644/480",
-      "https://placecats.net/645/480"
+      "https://loremflickr.com/640/480/cat?lock=4",
+      "https://loremflickr.com/640/480/cat?lock=5",
+      "https://loremflickr.com/640/480/cat?lock=6"
     ],
     "vaccinated": true,
     "spayedNeutered": true,
