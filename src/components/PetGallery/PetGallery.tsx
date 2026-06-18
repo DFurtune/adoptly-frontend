@@ -60,7 +60,7 @@ const PetGallery: React.FC<PetGalleryProps> = ({ images, altText }) => {
               className={isBeginning ? 'pet-gallery-nav-btn--disabled' : ''}
               aria-label="Попереднє фото"
             >
-              <Icon id="icon-left" size={42} height={42} />{' '}
+              <Icon id="icon-left" size={42} height={42} />
             </button>
           )}
           <Swiper
@@ -82,14 +82,10 @@ const PetGallery: React.FC<PetGalleryProps> = ({ images, altText }) => {
             <button
               type="button"
               onClick={handleNext}
+              className={isEnd ? 'pet-gallery-nav-btn--disabled' : ''}
               aria-label="Наступне фото"
             >
-              <Icon
-                id="icon-right"
-                size={42}
-                height={42}
-                className={isEnd ? 'pet-gallery-nav-btn--disabled' : ''}
-              />
+              <Icon id="icon-right" size={42} height={42} />
             </button>
           )}
         </div>

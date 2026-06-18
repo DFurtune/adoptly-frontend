@@ -13,16 +13,10 @@ const PetDetailPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    let active = true;
     getPetById(Number(id)).then(data => {
-      if (active) {
-        setPet(data);
-        setLoading(false);
-      }
+      setPet(data);
+      setLoading(false);
     });
-    return () => {
-      active = false;
-    };
   }, [id]);
 
   if (loading) return null;
