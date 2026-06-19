@@ -4,12 +4,12 @@ import { useTranslation } from 'react-i18next';
 import Modal from '../Modal/Modal';
 import { Icon } from '../Icon/Icon';
 import Button from '../Button/Button';
-import GoogleAuthButton from '../GoogleAuthButton/GoogleAuthButton';
 import FormDivider from '../FormDivider/FormDivider';
 import './LoginModal.css';
 import { loginWithEmail } from '../../services/auth';
 import { isApiError } from '../../services/api';
 import { HTTP_STATUS } from '../../constants/HTTP_STATUS';
+import GoogleAuthContainer from '../GoogleAuthContainer/GoogleAuthContainer';
 
 type LoginFormData = {
   email: string;
@@ -168,12 +168,9 @@ const LoginModal: React.FC<LoginModalProps> = ({
         </button>
       </p>
       <FormDivider text={t('login.signInWith')} />
-      <GoogleAuthButton
-        onClick={() => {
-          // TODO(OSTC-189): wire up real Google OAuth
-          console.log('Google auth');
-        }}
-        ariaLabel={`${t('login.signInWith')} Google`}
+      <GoogleAuthContainer
+        onSuccess={onClose}
+        onError={() => setServerError('Помилка при логіні')}
       />
     </Modal>
   );
