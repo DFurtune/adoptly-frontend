@@ -1,13 +1,13 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import RegistrationModal from './RegistrationModal';
-import { registerUser } from '../../services/auth';
+import { registerWithEmail } from '../../services/auth';
 
 jest.mock('../../services/auth', () => ({
-  registerUser: jest.fn(),
+  registerWithEmail: jest.fn(),
 }));
 
-const mockedRegisterUser = registerUser as jest.MockedFunction<
-  typeof registerUser
+const mockedRegisterUser = registerWithEmail as jest.MockedFunction<
+  typeof registerWithEmail
 >;
 
 jest.mock('../Icon/Icon', () => ({
@@ -34,7 +34,7 @@ describe('RegistrationModal', () => {
     mockedRegisterUser.mockReset();
     mockedRegisterUser.mockResolvedValue({
       data: { accessToken: null },
-    } as Awaited<ReturnType<typeof registerUser>>);
+    } as Awaited<ReturnType<typeof registerWithEmail>>);
   });
 
   test('renders nothing when closed', () => {

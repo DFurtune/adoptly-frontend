@@ -7,7 +7,7 @@ import Button from '../Button/Button';
 import GoogleAuthButton from '../GoogleAuthButton/GoogleAuthButton';
 import FormDivider from '../FormDivider/FormDivider';
 import EmailConfirmModal from '../EmailConfirmModal/EmailConfirmModal';
-import { registerUser } from '../../services/auth';
+import { registerWithEmail } from '../../services/auth';
 import { isApiError } from '../../services/api';
 import './RegistrationModal.css';
 
@@ -69,7 +69,7 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
   const onSubmit = async (data: RegistrationFormData) => {
     setServerError(null);
     try {
-      await registerUser({
+      await registerWithEmail({
         email: data.email,
         password: data.password,
         role: data.role,

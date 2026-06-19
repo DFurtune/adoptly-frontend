@@ -15,7 +15,7 @@ export type LoginResponse = {
   };
 };
 
-export const registerUser = async (data: {
+export const registerWithEmail = async (data: {
   email: string;
   password: string;
   role: 'adopter' | 'shelter';
@@ -33,7 +33,7 @@ export const registerUser = async (data: {
   return response;
 };
 
-export const loginUser = async (data: {
+export const loginWithEmail = async (data: {
   email: string;
   password: string;
 }): Promise<LoginResponse> => {

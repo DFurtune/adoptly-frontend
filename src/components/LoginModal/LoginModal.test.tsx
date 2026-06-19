@@ -1,12 +1,12 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import LoginModal from './LoginModal';
-import { loginUser } from '../../services/auth';
+import { loginWithEmail } from '../../services/auth';
 
 jest.mock('../../services/auth', () => ({
-  loginUser: jest.fn(),
+  loginWithEmail: jest.fn(),
 }));
 
-const mockedLoginUser = loginUser as jest.MockedFunction<typeof loginUser>;
+const mockedLoginUser = loginWithEmail as jest.MockedFunction<typeof loginWithEmail>;
 
 jest.mock('../Icon/Icon', () => ({
   Icon: ({ id, className }: { id: string; className?: string }) => (

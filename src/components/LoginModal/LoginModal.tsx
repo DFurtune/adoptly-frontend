@@ -7,7 +7,7 @@ import Button from '../Button/Button';
 import GoogleAuthButton from '../GoogleAuthButton/GoogleAuthButton';
 import FormDivider from '../FormDivider/FormDivider';
 import './LoginModal.css';
-import { loginUser } from '../../services/auth';
+import { loginWithEmail } from '../../services/auth';
 import { isApiError } from '../../services/api';
 import { HTTP_STATUS } from '../../constants/HTTP_STATUS';
 
@@ -50,7 +50,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
   const onSubmit = async (data: LoginFormData) => {
     setServerError(null);
     try {
-      await loginUser({ email: data.email, password: data.password });
+      await loginWithEmail({ email: data.email, password: data.password });
       onClose();
     } catch (error) {
       if (isApiError(error)) {

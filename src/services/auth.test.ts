@@ -1,4 +1,4 @@
-import { registerUser, loginUser, type LoginResponse } from './auth';
+import { registerWithEmail, loginWithEmail, type LoginResponse } from './auth';
 import { apiClient } from './api';
 
 jest.mock('./api', () => ({
@@ -11,14 +11,14 @@ const mockedPost = apiClient.post as jest.MockedFunction<
   typeof apiClient.post
 >;
 
-describe('registerUser', () => {
+describe('registerWithEmail', () => {
   beforeEach(() => {
     mockedPost.mockReset();
     mockedPost.mockResolvedValue({ data: { accessToken: null } });
   });
 
   test('posts to /auth/register endpoint', async () => {
-    await registerUser({
+    await registerWithEmail({
       email: 'test@example.com',
       password: 'password123',
       role: 'adopter',
@@ -29,7 +29,7 @@ describe('registerUser', () => {
   });
 
   test('maps adopter role to USER', async () => {
-    await registerUser({
+    await registerWithEmail({
       email: 'test@example.com',
       password: 'password123',
       role: 'adopter',
@@ -39,7 +39,7 @@ describe('registerUser', () => {
   });
 
   test('maps shelter role to SHELTER', async () => {
-    await registerUser({
+    await registerWithEmail({
       email: 'shelter@example.com',
       password: 'password123',
       role: 'shelter',
@@ -49,7 +49,7 @@ describe('registerUser', () => {
   });
 
   test('passes email and password through unchanged', async () => {
-    await registerUser({
+    await registerWithEmail({
       email: 'user@example.com',
       password: 'secret123',
       role: 'adopter',
@@ -62,7 +62,7 @@ describe('registerUser', () => {
   });
 
   test('includes empty strings for optional backend fields', async () => {
-    await registerUser({
+    await registerWithEmail({
       email: 'test@example.com',
       password: 'password123',
       role: 'adopter',
@@ -80,7 +80,7 @@ describe('registerUser', () => {
     const response = { data: { accessToken: null, message: 'check email' } };
     mockedPost.mockResolvedValueOnce(response);
 
-    const result = await registerUser({
+    const result = await registerWithEmail({
       email: 'test@example.com',
       password: 'password123',
       role: 'adopter',
@@ -94,7 +94,7 @@ describe('registerUser', () => {
     mockedPost.mockRejectedValueOnce(error);
 
     await expect(
-      registerUser({
+      registerWithEmail({
         email: 'taken@example.com',
         password: 'password123',
         role: 'adopter',
@@ -103,7 +103,7 @@ describe('registerUser', () => {
   });
 });
 
-describe('loginUser', () => {
+describe('loginWithEmail', () => {
   const successResponse: { data: LoginResponse } = {
     data: {
       accessToken: 'access-token-jwt',
@@ -128,7 +128,7 @@ describe('loginUser', () => {
   });
 
   test('posts to /auth/login endpoint with email and password', async () => {
-    await loginUser({ email: 'user@example.com', password: 'secret123' });
+    await loginWithEmail({ email: 'user@example.com', password: 'secret123' });
 
     expect(mockedPost).toHaveBeenCalledTimes(1);
     expect(mockedPost.mock.calls[0][0]).toBe('/auth/login');
@@ -139,19 +139,19 @@ describe('loginUser', () => {
   });
 
   test('stores accessToken in localStorage on success', async () => {
-    await loginUser({ email: 'user@example.com', password: 'secret123' });
+    await loginWithEmail({ email: 'user@example.com', password: 'secret123' });
 
     expect(localStorage.getItem('accessToken')).toBe('access-token-jwt');
   });
 
   test('stores refreshToken in localStorage on success', async () => {
-    await loginUser({ email: 'user@example.com', password: 'secret123' });
+    await loginWithEmail({ email: 'user@example.com', password: 'secret123' });
 
     expect(localStorage.getItem('refreshToken')).toBe('refresh-token-uuid');
   });
 
   test('stores userInfo as JSON in localStorage on success', async () => {
-    await loginUser({ email: 'user@example.com', password: 'secret123' });
+    await loginWithEmail({ email: 'user@example.com', password: 'secret123' });
 
     const stored = localStorage.getItem('userInfo');
     expect(stored).not.toBeNull();
@@ -159,7 +159,7 @@ describe('loginUser', () => {
   });
 
   test('returns the LoginResponse data', async () => {
-    const result = await loginUser({
+    const result = await loginWithEmail({
       email: 'user@example.com',
       password: 'secret123',
     });
@@ -176,7 +176,7 @@ describe('loginUser', () => {
     });
 
     await expect(
-      loginUser({ email: 'user@example.com', password: 'wrong' })
+      loginWithEmail({ email: 'user@example.com', password: 'wrong' })
     ).rejects.toBeDefined();
 
     expect(localStorage.getItem('accessToken')).toBeNull();
@@ -194,7 +194,7 @@ describe('loginUser', () => {
     mockedPost.mockRejectedValueOnce(error);
 
     await expect(
-      loginUser({ email: 'inactive@example.com', password: 'secret123' })
+      loginWithEmail({ email: 'inactive@example.com', password: 'secret123' })
     ).rejects.toEqual(error);
   });
 });
