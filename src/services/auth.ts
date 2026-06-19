@@ -51,9 +51,33 @@ export const loginUser = async (data: {
     } as ApiError;
   }
 
-  localStorage.setItem('accessToken', response.data.accessToken);
-  localStorage.setItem('refreshToken', response.data.refreshToken);
-  localStorage.setItem('userInfo', JSON.stringify(response.data.userInfo));
+  localStorage.setItem('accessToken', accessToken);
+  localStorage.setItem('refreshToken', refreshToken);
+  localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+  return response.data;
+};
+
+export const loginWithGoogle = async (
+  idToken: string,
+  rememberMe?: boolean
+): Promise<LoginResponse> => {
+  const response = await apiClient.post<LoginResponse>('/auth/google', {
+    idToken,
+    rememberMe,
+  });
+
+  const { accessToken, refreshToken, userInfo } = response.data;
+  if (!accessToken || !refreshToken || !userInfo) {
+    throw {
+      type: 'server',
+      message: 'Invalid Google login response: missing tokens or userInfo',
+    } as ApiError;
+  }
+
+  localStorage.setItem('accessToken', accessToken);
+  localStorage.setItem('refreshToken', refreshToken);
+  localStorage.setItem('userInfo', JSON.stringify(userInfo));
 
   return response.data;
 };
