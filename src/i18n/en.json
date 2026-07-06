@@ -212,5 +212,28 @@
     "serverError": "Server error. Please try again later.",
     "networkError": "Network error. Please check your internet connection and try again.",
     "submitting": "Logging in..."
+  },
+  "shelter": {
+    "menu": {
+      "ariaLabel": "Shelter cabinet navigation",
+      "profile": "Shelter Profile",
+      "pets": "Animal Cards",
+      "applications": "Adoption Applications",
+      "analytics": "Analytics"
+    },
+    "pages": {
+      "profile": {
+        "title": "Shelter Profile"
+      },
+      "pets": {
+        "title": "Animal Cards"
+      },
+      "applications": {
+        "title": "Adoption Applications"
+      },
+      "analytics": {
+        "title": "Shelter Analytics"
+      }
+    }
   }
 }

@@ -1,3 +1,4 @@
+import { lazy } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,6 +16,20 @@ import Footer from './components/Footer/Footer';
 import PetsPage from './pages/PetsPage/PetsPage';
 import PolicyPage from './pages/PolicyPage/PolicyPage';
 import LanguageLayout from './components/LanguageLayout/LanguageLayout';
+import ShelterLayout from './components/ShelterLayout/ShelterLayout';
+
+const ShelterProfilePage = lazy(
+  () => import('./pages/shelter/ShelterProfilePage/ShelterProfilePage')
+);
+const ShelterPetsPage = lazy(
+  () => import('./pages/shelter/ShelterPetsPage/ShelterPetsPage')
+);
+const ShelterApplicationsPage = lazy(
+  () => import('./pages/shelter/ShelterApplicationsPage/ShelterApplicationsPage')
+);
+const ShelterAnalyticsPage = lazy(
+  () => import('./pages/shelter/ShelterAnalyticsPage/ShelterAnalyticsPage')
+);
 
 function App() {
   return (
@@ -31,6 +46,16 @@ function App() {
             <Route path="contacts" element={<ContactPage />} />
             <Route path="pets" element={<PetsPage />} />
             <Route path="privacy-policy" element={<PolicyPage />} />
+            <Route path="shelter" element={<ShelterLayout />}>
+              <Route index element={<Navigate to="profile" replace />} />
+              <Route path="profile" element={<ShelterProfilePage />} />
+              <Route path="pets" element={<ShelterPetsPage />} />
+              <Route
+                path="applications"
+                element={<ShelterApplicationsPage />}
+              />
+              <Route path="analytics" element={<ShelterAnalyticsPage />} />
+            </Route>
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

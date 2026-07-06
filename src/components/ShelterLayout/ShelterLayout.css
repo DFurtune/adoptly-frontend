@@ -1,0 +1,25 @@
+.shelter-layout {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  width: 100%;
+}
+
+.shelter-content {
+  flex: 1;
+  display: flex;
+}
+
+.shelter-page {
+  padding: 40px;
+  border-radius: 44px;
+  background-color: white;
+  flex: 1;
+}
+
+.shelter-page h1 {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--title-color-dark);
+}
