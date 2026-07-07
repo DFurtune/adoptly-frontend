@@ -231,5 +231,28 @@
   "common": {
     "yes": "Yes",
     "no": "No"
+  },
+  "shelter": {
+    "menu": {
+      "ariaLabel": "Shelter cabinet navigation",
+      "profile": "Shelter Profile",
+      "pets": "Animal Cards",
+      "applications": "Adoption Applications",
+      "analytics": "Analytics"
+    },
+    "pages": {
+      "profile": {
+        "title": "Shelter Profile"
+      },
+      "pets": {
+        "title": "Animal Cards"
+      },
+      "applications": {
+        "title": "Adoption Applications"
+      },
+      "analytics": {
+        "title": "Shelter Analytics"
+      }
+    }
   }
 }
