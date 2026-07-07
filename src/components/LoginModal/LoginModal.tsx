@@ -36,8 +36,11 @@ const LoginModal: React.FC<LoginModalProps> = ({
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<LoginFormData>();
+
+  const rememberMeValue = watch('rememberMe');
 
   useEffect(() => {
     if (isOpen) {
@@ -170,7 +173,8 @@ const LoginModal: React.FC<LoginModalProps> = ({
       <FormDivider text={t('login.signInWith')} />
       <GoogleAuthContainer
         onSuccess={onClose}
-        onError={() => setServerError('Помилка при логіні')}
+        onError={() => setServerError(t('login.googleError'))}
+        rememberMe={rememberMeValue}
       />
     </Modal>
   );

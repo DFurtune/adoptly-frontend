@@ -5,10 +5,12 @@ import { loginWithGoogle } from '../../services/auth';
 interface GoogleAuthContainerProps {
   onSuccess: () => void;
   onError: () => void;
+  rememberMe?: boolean;
 }
 const GoogleAuthContainer: React.FC<GoogleAuthContainerProps> = ({
   onSuccess,
   onError,
+  rememberMe = false,
 }) => {
   return (
     <GoogleLogin
@@ -18,7 +20,7 @@ const GoogleAuthContainer: React.FC<GoogleAuthContainerProps> = ({
           return;
         }
         try {
-          await loginWithGoogle(response.credential);
+          await loginWithGoogle(response.credential, rememberMe);
           onSuccess();
         } catch {
           onError();

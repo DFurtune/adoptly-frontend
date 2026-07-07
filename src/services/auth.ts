@@ -60,7 +60,7 @@ export const loginWithEmail = async (data: {
 
 export const loginWithGoogle = async (
   idToken: string,
-  rememberMe?: boolean
+  rememberMe: boolean
 ): Promise<LoginResponse> => {
   const response = await apiClient.post<LoginResponse>('/auth/google', {
     idToken,
