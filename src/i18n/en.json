@@ -213,6 +213,25 @@
     "networkError": "Network error. Please check your internet connection and try again.",
     "submitting": "Logging in..."
   },
+  "petDetail": {
+    "shelter": "Shelter",
+    "location": "City",
+    "description": "Description",
+    "notFound": "Pet information not found",
+    "ageMonths_one": "{{count}} month",
+    "ageMonths_other": "{{count}} months",
+    "ageYears_one": "{{count}} year",
+    "ageYears_other": "{{count}} years",
+    "vaccinated": "Vaccinated",
+    "spayedNeutered": "Spayed/Neutered",
+    "treatedForParasites": "Treated for parasites",
+    "adopt": "I want to adopt",
+    "contactShelter": "Contact shelter"
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No"
+  },
   "shelter": {
     "menu": {
       "ariaLabel": "Shelter cabinet navigation",

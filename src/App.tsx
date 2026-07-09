@@ -16,6 +16,7 @@ import Footer from './components/Footer/Footer';
 import PetsPage from './pages/PetsPage/PetsPage';
 import PolicyPage from './pages/PolicyPage/PolicyPage';
 import LanguageLayout from './components/LanguageLayout/LanguageLayout';
+import PetDetailPage from './pages/PetDetailPage/PetDetailPage';
 import ShelterLayout from './components/ShelterLayout/ShelterLayout';
 
 const ShelterProfilePage = lazy(
@@ -25,7 +26,8 @@ const ShelterPetsPage = lazy(
   () => import('./pages/shelter/ShelterPetsPage/ShelterPetsPage')
 );
 const ShelterApplicationsPage = lazy(
-  () => import('./pages/shelter/ShelterApplicationsPage/ShelterApplicationsPage')
+  () =>
+    import('./pages/shelter/ShelterApplicationsPage/ShelterApplicationsPage')
 );
 const ShelterAnalyticsPage = lazy(
   () => import('./pages/shelter/ShelterAnalyticsPage/ShelterAnalyticsPage')
@@ -45,6 +47,7 @@ function App() {
             <Route path="shelters" element={<SheltersPage />} />
             <Route path="contacts" element={<ContactPage />} />
             <Route path="pets" element={<PetsPage />} />
+            <Route path="pets/:id" element={<PetDetailPage />} />
             <Route path="privacy-policy" element={<PolicyPage />} />
             <Route path="shelter" element={<ShelterLayout />}>
               <Route index element={<Navigate to="profile" replace />} />

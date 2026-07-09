@@ -1,0 +1,97 @@
+.pet-detail-card {
+  display: grid;
+  grid-template-columns: 555fr 765fr;
+  gap: 40px;
+  color: var(--title-color-dark);
+
+  --pet-detail-age-badge-bg: #e3caff;
+}
+
+.pet-detail-card__gallery {
+  min-width: 0;
+}
+
+.pet-detail-card__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-detail-card__name {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.pet-detail-card__age-gender {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.pet-detail-card__age-gender p:first-child {
+  background-color: var(--pet-detail-age-badge-bg);
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.pet-detail-card__shelter,
+.pet-detail-card__location,
+.pet-detail-card__health,
+.pet-detail-card__description {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.pet-detail-card__location,
+.pet-detail-card__health p {
+  margin-bottom: 12px;
+}
+
+.pet-detail-card__shelter,
+.pet-detail-card__health {
+  margin-bottom: 24px;
+}
+
+.pet-detail-card__description {
+  line-height: 1.5;
+}
+
+.pet-detail-card__description > p:first-child {
+  margin-bottom: 8px;
+}
+
+.pet-detail-card__label {
+  font-weight: 800;
+}
+
+.pet-detail-card__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.pet-detail-card__actions button {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .pet-detail-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pet-detail-card__actions {
+    margin-top: 24px;
+    flex-direction: column;
+  }
+
+  .pet-detail-card__actions button {
+    flex: auto;
+  }
+}
