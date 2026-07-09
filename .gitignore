@@ -1,18 +1,11 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
 # Node modules
 node_modules/
 
 # Build output
 dist/
-dist-ssr/
+
+# Test coverage
+coverage/
 
 # Environment variables
 .env
@@ -21,35 +14,16 @@ dist-ssr/
 
 # Editor directories and files
 .vscode/
-!.vscode/extensions.json
 .idea/
+
+# OS
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# TypeScript
-*.tsbuildinfo
-
-# Vite
-.vite/
-.cache/
-
-# System files
 Thumbs.db
-*.bak
 
-# Specific to your project structure
-# Ignore public files that are dynamically generated or temporary
-public/*.cache
-public/*.temp
-
-# Ignore Prettier and ESLint cache files
-.prettiercache
-.eslintcache
-
-# Ignore temporary files created by IDEs or OS
+# Temp files
 *.tmp
 *.temp
+
+# Logs
+logs/
+*.log
