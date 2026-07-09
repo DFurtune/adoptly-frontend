@@ -50,12 +50,6 @@ public/*.temp
 .prettiercache
 .eslintcache
 
-# Ignore lock files if you're not using them consistently
-# Uncomment the one you're not using
-package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
-
 # Ignore temporary files created by IDEs or OS
 *.tmp
 *.temp
