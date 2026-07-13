@@ -7,9 +7,7 @@ jest.mock('./api', () => ({
   },
 }));
 
-const mockedPost = apiClient.post as jest.MockedFunction<
-  typeof apiClient.post
->;
+const mockedPost = apiClient.post as jest.MockedFunction<typeof apiClient.post>;
 
 describe('registerUser', () => {
   beforeEach(() => {
@@ -90,7 +88,11 @@ describe('registerUser', () => {
   });
 
   test('propagates errors from apiClient', async () => {
-    const error = { type: 'client', status: 409, message: 'Email Already Exists' };
+    const error = {
+      type: 'client',
+      status: 409,
+      message: 'Email Already Exists',
+    };
     mockedPost.mockRejectedValueOnce(error);
 
     await expect(

@@ -18,7 +18,11 @@ jest.mock('react-i18next', () => ({
 jest.mock('../../components/PetDetailCard/PetDetailCard', () => ({
   __esModule: true,
   default: ({ pet }: { pet: Pet }) => (
-    <div data-testid="pet-detail-card" data-pet-id={pet.id} data-pet-name={pet.name} />
+    <div
+      data-testid="pet-detail-card"
+      data-pet-id={pet.id}
+      data-pet-name={pet.name}
+    />
   ),
 }));
 
