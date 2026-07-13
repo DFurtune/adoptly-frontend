@@ -12,7 +12,11 @@ jest.mock('react-i18next', () => ({
 jest.mock('../PetGallery/PetGallery', () => ({
   __esModule: true,
   default: ({ images, altText }: { images: string[]; altText: string }) => (
-    <div data-testid="pet-gallery" data-images-count={images.length} data-alt={altText} />
+    <div
+      data-testid="pet-gallery"
+      data-images-count={images.length}
+      data-alt={altText}
+    />
   ),
 }));
 

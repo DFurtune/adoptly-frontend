@@ -11,7 +11,9 @@ describe('GenderIcon', () => {
 
     expect(getByTestId('icon-male')).toBeInTheDocument();
     expect(container.querySelector('.gender-icon--male')).toBeInTheDocument();
-    expect(container.querySelector('.gender-icon--female')).not.toBeInTheDocument();
+    expect(
+      container.querySelector('.gender-icon--female')
+    ).not.toBeInTheDocument();
   });
 
   test('renders icon-female and applies female modifier class for FEMALE', () => {
@@ -19,6 +21,8 @@ describe('GenderIcon', () => {
 
     expect(getByTestId('icon-female')).toBeInTheDocument();
     expect(container.querySelector('.gender-icon--female')).toBeInTheDocument();
-    expect(container.querySelector('.gender-icon--male')).not.toBeInTheDocument();
+    expect(
+      container.querySelector('.gender-icon--male')
+    ).not.toBeInTheDocument();
   });
 });
