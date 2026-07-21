@@ -2,7 +2,6 @@
   border-radius: 20px;
   width: 100%;
   max-width: var(--btn-max-width);
-  max-height: var(--btn-max-height);
   height: var(--btn-height);
   font-size: 22px;
   font-weight: 800;
@@ -38,16 +37,18 @@
   cursor: not-allowed;
 }
 
-.button:disabled:hover {
-  background-color: var(--btn-primary-bg);
+.button--secondary:disabled:hover {
   box-shadow: none;
+}
+
+.button--primary:disabled:hover {
+  background-color: var(--btn-primary-bg);
 }
 
 @media screen and (max-width: 768px) {
   .button {
     max-width: var(--btn-max-width-mobile, var(--btn-max-width));
-    max-height: var(--btn-max-height-mobile, var(--btn-max-height));
-    height: 48px;
+    height: var(--btn-height-mobile, 48px);
     border-radius: 12px;
     font-size: 16px;
   }
