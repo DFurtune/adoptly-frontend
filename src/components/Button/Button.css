@@ -32,6 +32,18 @@
   color: var(--btn-secondary-text);
 }
 
+.button--action {
+  background-color: var(--btn-action-bg);
+  color: #ffffff;
+  border-radius: 8px;
+  font-family: var(--font-secondary);
+  font-size: 16px;
+}
+
+.button--action:hover {
+  background-color: var(--btn-action-bg-hover);
+}
+
 .button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
@@ -45,11 +57,19 @@
   background-color: var(--btn-primary-bg);
 }
 
+.button--action:disabled:hover {
+  background-color: var(--btn-action-bg);
+}
+
 @media screen and (max-width: 768px) {
   .button {
     max-width: var(--btn-max-width-mobile, var(--btn-max-width));
     height: var(--btn-height-mobile, 48px);
     border-radius: 12px;
     font-size: 16px;
+  }
+
+  .button--action {
+    border-radius: 8px;
   }
 }

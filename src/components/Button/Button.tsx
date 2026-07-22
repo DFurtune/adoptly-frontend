@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 import './Button.css';
 
-type ButtonVariant = 'primary' | 'secondary';
+type ButtonVariant = 'primary' | 'secondary' | 'action';
 
 interface ButtonProps {
   children: ReactNode;
