@@ -121,19 +121,6 @@
   text-decoration: underline;
 }
 
-.login-form .button {
-  border-radius: 6px;
-  font-family: var(--font-secondary);
-  font-size: 16px;
-  font-weight: 800;
-  background-color: #0054d6;
-  color: #ffffff;
-}
-
-.login-form .button:hover {
-  background-color: #153da8;
-}
-
 .login-form-register-text {
   text-align: center;
   font-family: var(--font-primary);
