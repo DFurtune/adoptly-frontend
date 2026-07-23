@@ -1,0 +1,131 @@
+.password-reset-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+  border-radius: 16px;
+  padding: 48px 56px;
+  width: 560px;
+  height: 407px;
+  box-shadow: 0 5px 28px 0 rgba(9, 26, 73, 0.2);
+  background: #fff;
+  margin: 0 auto;
+  margin-top: 157px;
+  margin-bottom: 158px;
+}
+.password-reset-form .button {
+  border-radius: 6px;
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 800;
+  background-color: #0054d6;
+  color: #ffffff;
+}
+
+.password-reset-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 82, 204, 0.05);
+  box-sizing: border-box;
+}
+
+.password-reset-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0b1e43;
+  text-align: start;
+  margin: 0 0 12px 0;
+}
+
+.password-reset-description {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #091a49;
+  text-align: start;
+  width: 448px;
+  margin: 0 0 32px 0;
+}
+
+.password-reset-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.password-reset-label {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #091a49;
+  text-align: start;
+}
+
+.password-reset-input {
+  width: 100%;
+  height: 56px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  padding: 16px 18px 20px;
+  width: 448px;
+  height: 52px;
+}
+
+.password-reset-input::placeholder {
+  color: #94a3b8;
+}
+
+.password-reset-input:focus {
+  border-color: #0052cc;
+  box-shadow: 0 0 0 1px #0052cc;
+}
+
+.password-reset-input.input-error {
+  border-color: #ef4444;
+}
+
+.password-reset-input.input-error:focus {
+  box-shadow: 0 0 0 1px #ef4444;
+}
+
+.password-reset-error {
+  font-size: 12px;
+  color: #ef4444;
+  text-align: left;
+  margin-top: 4px;
+}
+
+.password-reset-back-btn {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  background: none;
+  border: none;
+  color: #0052cc;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: text-decoration 0.2s ease;
+}
+
+.password-reset-back-btn:hover {
+  text-decoration: underline;
+}
