@@ -17,7 +17,7 @@ import PetsPage from './pages/PetsPage/PetsPage';
 import PolicyPage from './pages/PolicyPage/PolicyPage';
 import LanguageLayout from './components/LanguageLayout/LanguageLayout';
 import ShelterLayout from './components/ShelterLayout/ShelterLayout';
-
+import PetDetailPage from './pages/PetDetailPage/PetDetailPage';
 
 import PasswordResetForm from './components/PasswordResetForm/PasswordResetForm';
 
@@ -28,18 +28,18 @@ const ShelterPetsPage = lazy(
   () => import('./pages/shelter/ShelterPetsPage/ShelterPetsPage')
 );
 const ShelterApplicationsPage = lazy(
-  () => import('./pages/shelter/ShelterApplicationsPage/ShelterApplicationsPage')
+  () =>
+    import('./pages/shelter/ShelterApplicationsPage/ShelterApplicationsPage')
 );
 const ShelterAnalyticsPage = lazy(
   () => import('./pages/shelter/ShelterAnalyticsPage/ShelterAnalyticsPage')
 );
 
 function App() {
-  
   const handleResetSubmit = async (email: string) => {
     console.log('Запит на відновлення паролю для:', email);
-    
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    await new Promise(resolve => setTimeout(resolve, 1500));
   };
 
   return (
@@ -55,17 +55,16 @@ function App() {
             <Route path="shelters" element={<SheltersPage />} />
             <Route path="contacts" element={<ContactPage />} />
             <Route path="pets" element={<PetsPage />} />
-            <Route path="privacy-policy" element={<PolicyPage />} />
-            
-          
-            <Route 
-              path="reset-password" 
+            <Route path="privacy-policy" element={<PolicyPage />} /> 
+            <Route path="pets/:id" element={<PetDetailPage />} />
+            <Route
+              path="reset-password"
               element={
-                <PasswordResetForm 
-                  onBackToLogin={() => window.history.back()} 
-                  onSubmitEmail={handleResetSubmit} 
+                <PasswordResetForm
+                  onBackToLogin={() => window.history.back()}
+                  onSubmitEmail={handleResetSubmit}
                 />
-              } 
+              }
             />
 
             <Route path="shelter" element={<ShelterLayout />}>
