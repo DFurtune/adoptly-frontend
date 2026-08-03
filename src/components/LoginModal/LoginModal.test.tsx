@@ -16,6 +16,11 @@ jest.mock('../Icon/Icon', () => ({
   ),
 }));
 
+jest.mock('../GoogleAuthContainer/GoogleAuthContainer', () => ({
+  __esModule: true,
+  default: () => <div data-testid="google-auth-container" />,
+}));
+
 describe('LoginModal', () => {
   const onClose = jest.fn();
   const onSwitchToRegister = jest.fn();
