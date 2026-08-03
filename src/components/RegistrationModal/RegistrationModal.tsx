@@ -4,8 +4,6 @@ import { useTranslation } from 'react-i18next';
 import Modal from '../Modal/Modal';
 import { Icon } from '../Icon/Icon';
 import Button from '../Button/Button';
-import GoogleAuthButton from '../GoogleAuthButton/GoogleAuthButton';
-import FormDivider from '../FormDivider/FormDivider';
 import EmailConfirmModal from '../EmailConfirmModal/EmailConfirmModal';
 import { registerWithEmail } from '../../services/auth';
 import { isApiError } from '../../services/api';
@@ -42,19 +40,9 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
     handleSubmit,
     reset,
     watch,
-    trigger,
     setError,
     formState: { errors, isSubmitting },
   } = useForm<RegistrationFormData>();
-
-  const selectedRole = watch('role');
-
-  const handleGoogleClick = async () => {
-    const isRoleValid = await trigger('role');
-    if (!isRoleValid) return;
-    // TODO(OSTC-189): wire up real Google OAuth
-    console.log('Google auth', selectedRole);
-  };
 
   const password = watch('password', '');
 
@@ -230,11 +218,6 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
             {t('registration.login_link')}
           </button>
         </p>
-        <FormDivider text={t('registration.signUpWith')} />
-        <GoogleAuthButton
-          onClick={handleGoogleClick}
-          ariaLabel={`${t('registration.signUpWith')} Google`}
-        />
       </Modal>
       <EmailConfirmModal
         isOpen={confirmEmail !== null}
