@@ -17,6 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-oauth/google": "^0.13.5",
     "@zxcvbn-ts/core": "^3.0.4",
     "@zxcvbn-ts/language-common": "^3.0.4",
     "axios": "^1.15.2",

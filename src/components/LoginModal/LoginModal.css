@@ -141,3 +141,8 @@
 .login-form-register-link:hover {
   text-decoration: none;
 }
+
+.login-form-google-auth {
+  display: flex;
+  justify-content: center;
+}
