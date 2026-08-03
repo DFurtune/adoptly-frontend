@@ -27,6 +27,12 @@ const GoogleAuthContainer: React.FC<GoogleAuthContainerProps> = ({
         }
       }}
       onError={onError}
+      theme="outline"
+      size="large"
+      shape="rectangular"
+      text="signin_with"
+      logo_alignment="center"
+      width={400}
     />
   );
 };

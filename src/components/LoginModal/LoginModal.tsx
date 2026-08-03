@@ -171,11 +171,13 @@ const LoginModal: React.FC<LoginModalProps> = ({
         </button>
       </p>
       <FormDivider text={t('login.signInWith')} />
-      <GoogleAuthContainer
-        onSuccess={onClose}
-        onError={() => setServerError(t('login.googleError'))}
-        rememberMe={rememberMeValue}
-      />
+      <div className="login-form-google-auth">
+        <GoogleAuthContainer
+          onSuccess={onClose}
+          onError={() => setServerError(t('login.googleError'))}
+          rememberMe={rememberMeValue}
+        />
+      </div>
     </Modal>
   );
 };

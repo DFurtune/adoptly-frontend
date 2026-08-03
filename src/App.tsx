@@ -5,6 +5,8 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { useTranslation } from 'react-i18next';
 import HomePage from './pages/HomePage/HomePage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import HowToHelpPage from './pages/HowToHelpPage/HowToHelpPage';
@@ -34,37 +36,44 @@ const ShelterAnalyticsPage = lazy(
 );
 
 function App() {
+  const { i18n } = useTranslation();
   return (
-    <Router basename="/adoptly-frontend">
-      <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Navigate to="/uk/" replace />} />
-          <Route path="/:lng" element={<LanguageLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path="about" element={<AboutPage />} />
-            <Route path="how-to-help" element={<HowToHelpPage />} />
-            <Route path="shelters" element={<SheltersPage />} />
-            <Route path="contacts" element={<ContactPage />} />
-            <Route path="pets" element={<PetsPage />} />
-            <Route path="pets/:id" element={<PetDetailPage />} />
-            <Route path="privacy-policy" element={<PolicyPage />} />
-            <Route path="shelter" element={<ShelterLayout />}>
-              <Route index element={<Navigate to="profile" replace />} />
-              <Route path="profile" element={<ShelterProfilePage />} />
-              <Route path="pets" element={<ShelterPetsPage />} />
-              <Route
-                path="applications"
-                element={<ShelterApplicationsPage />}
-              />
-              <Route path="analytics" element={<ShelterAnalyticsPage />} />
+    <GoogleOAuthProvider
+      key={i18n.language}
+      clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}
+      locale={i18n.language}
+    >
+      <Router basename="/adoptly-frontend">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Navigate to="/uk/" replace />} />
+            <Route path="/:lng" element={<LanguageLayout />}>
+              <Route index element={<HomePage />} />
+              <Route path="about" element={<AboutPage />} />
+              <Route path="how-to-help" element={<HowToHelpPage />} />
+              <Route path="shelters" element={<SheltersPage />} />
+              <Route path="contacts" element={<ContactPage />} />
+              <Route path="pets" element={<PetsPage />} />
+              <Route path="pets/:id" element={<PetDetailPage />} />
+              <Route path="privacy-policy" element={<PolicyPage />} />
+              <Route path="shelter" element={<ShelterLayout />}>
+                <Route index element={<Navigate to="profile" replace />} />
+                <Route path="profile" element={<ShelterProfilePage />} />
+                <Route path="pets" element={<ShelterPetsPage />} />
+                <Route
+                  path="applications"
+                  element={<ShelterApplicationsPage />}
+                />
+                <Route path="analytics" element={<ShelterAnalyticsPage />} />
+              </Route>
+              <Route path="*" element={<NotFound />} />
             </Route>
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </main>
-      <Footer />
-    </Router>
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </GoogleOAuthProvider>
   );
 }
 
