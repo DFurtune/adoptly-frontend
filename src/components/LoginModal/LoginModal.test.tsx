@@ -6,7 +6,9 @@ jest.mock('../../services/auth', () => ({
   loginWithEmail: jest.fn(),
 }));
 
-const mockedLoginUser = loginWithEmail as jest.MockedFunction<typeof loginWithEmail>;
+const mockedLoginUser = loginWithEmail as jest.MockedFunction<
+  typeof loginWithEmail
+>;
 
 jest.mock('../Icon/Icon', () => ({
   Icon: ({ id, className }: { id: string; className?: string }) => (
