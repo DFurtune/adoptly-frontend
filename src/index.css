@@ -14,6 +14,13 @@
   --button-text: #ffffff;
   --container-padding: 40px;
 
+  /* Button colors */
+  --btn-primary-bg: #ff7300;
+  --btn-primary-bg-hover: #ff8c00;
+  --btn-secondary-text: #091a49;
+  --btn-action-bg: #0054d6;
+  --btn-action-bg-hover: #153da8;
+
   font-family: var(--font-primary);
   line-height: 1.5;
   font-weight: 400;

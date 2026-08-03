@@ -1,14 +1,7 @@
-:root {
-  --color-primary: #ff7300;
-  --color-primary-hover: #ff8c00;
-  --color-text-dark: #595c6e;
-}
-
 .button {
   border-radius: 20px;
   width: 100%;
   max-width: var(--btn-max-width);
-  max-height: var(--btn-max-height);
   height: var(--btn-height);
   font-size: 22px;
   font-weight: 800;
@@ -21,22 +14,34 @@
 }
 
 .button--primary:hover {
-  background-color: var(--color-primary-hover);
+  background-color: var(--btn-primary-bg-hover);
   border: none;
 }
 
 .button--secondary:hover {
-  box-shadow: 0px 1px 8px 0px var(--color-primary);
+  box-shadow: 0px 1px 8px 0px var(--btn-primary-bg);
 }
 
 .button--primary {
-  background-color: var(--color-primary);
+  background-color: var(--btn-primary-bg);
   color: white;
 }
 .button--secondary {
   background-color: transparent;
-  border: 2px solid var(--color-primary);
-  color: var(--color-text-dark);
+  border: 2px solid var(--btn-primary-bg);
+  color: var(--btn-secondary-text);
+}
+
+.button--action {
+  background-color: var(--btn-action-bg);
+  color: #ffffff;
+  border-radius: 8px;
+  font-family: var(--font-secondary);
+  font-size: 16px;
+}
+
+.button--action:hover {
+  background-color: var(--btn-action-bg-hover);
 }
 
 .button:disabled {
@@ -44,17 +49,27 @@
   cursor: not-allowed;
 }
 
-.button:disabled:hover {
-  background-color: var(--color-primary);
+.button--secondary:disabled:hover {
   box-shadow: none;
+}
+
+.button--primary:disabled:hover {
+  background-color: var(--btn-primary-bg);
+}
+
+.button--action:disabled:hover {
+  background-color: var(--btn-action-bg);
 }
 
 @media screen and (max-width: 768px) {
   .button {
     max-width: var(--btn-max-width-mobile, var(--btn-max-width));
-    max-height: var(--btn-max-height-mobile, var(--btn-max-height));
-    height: 48px;
+    height: var(--btn-height-mobile, 48px);
     border-radius: 12px;
     font-size: 16px;
+  }
+
+  .button--action {
+    border-radius: 8px;
   }
 }
