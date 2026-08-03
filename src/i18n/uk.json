@@ -215,5 +215,49 @@
     "networkError": "Перевірте підключення до інтернету та спробуйте знову.",
     "googleError": "Не вдалося увійти через Google.",
     "submitting": "Входимо..."
+  },
+  "petDetail": {
+    "shelter": "Притулок",
+    "location": "Місто",
+    "description": "Опис",
+    "notFound": "Інформація про тварину не знайдена",
+    "ageMonths_one": "{{count}} місяць",
+    "ageMonths_few": "{{count}} місяці",
+    "ageMonths_many": "{{count}} місяців",
+    "ageYears_one": "{{count}} рік",
+    "ageYears_few": "{{count}} роки",
+    "ageYears_many": "{{count}} років",
+    "vaccinated": "Вакциновано",
+    "spayedNeutered": "Стерилізовано",
+    "treatedForParasites": "Оброблено від паразитів",
+    "adopt": "Хочу всиновити",
+    "contactShelter": "Написати притулку"
+  },
+  "common": {
+    "yes": "Так",
+    "no": "Ні"
+  },
+  "shelter": {
+    "menu": {
+      "ariaLabel": "Меню кабінету притулку",
+      "profile": "Профіль притулку",
+      "pets": "Картки тварин",
+      "applications": "Заявки на адопцію",
+      "analytics": "Аналітика"
+    },
+    "pages": {
+      "profile": {
+        "title": "Профіль притулку"
+      },
+      "pets": {
+        "title": "Картки тварин"
+      },
+      "applications": {
+        "title": "Заявки на адопцію"
+      },
+      "analytics": {
+        "title": "Аналітика притулку"
+      }
+    }
   }
 }

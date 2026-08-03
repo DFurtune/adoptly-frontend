@@ -1,0 +1,109 @@
+[
+  {
+    "id": 1,
+    "name": "Тайсон",
+    "species": "DOG",
+    "gender": "MALE",
+    "age": 24,
+    "size": "LARGE",
+    "photos": [
+      "https://placedog.net/640/480?id=1",
+      "https://placedog.net/640/480?id=2",
+      "https://placedog.net/640/480?id=3",
+      "https://placedog.net/640/480?id=4"
+    ],
+    "vaccinated": true,
+    "spayedNeutered": true,
+    "treatedForParasites": true,
+    "description": "Великий, але добрий пес. Обожнює прогулянки та активні ігри. Чудово ладнає з дітьми та іншими тваринами, швидко вчиться командам. Шукає люблячу родину з власним подвір'ям.",
+    "breed": "Німецька вівчарка",
+    "adoptionConditions": "Бажано приватний будинок або велика квартира.",
+    "status": "AVAILABLE",
+    "shelter": { "id": 1, "name": "HelpDog&Cat", "location": "Київ" },
+    "dateOfArrival": "2026-01-15"
+  },
+  {
+    "id": 2,
+    "name": "Мурчик",
+    "species": "CAT",
+    "gender": "FEMALE",
+    "age": 5,
+    "size": "SMALL",
+    "photos": [
+      "https://loremflickr.com/640/480/cat?lock=7",
+      "https://loremflickr.com/640/480/cat?lock=2",
+      "https://loremflickr.com/640/480/cat?lock=3"
+    ],
+    "vaccinated": true,
+    "spayedNeutered": false,
+    "treatedForParasites": true,
+    "description": "Грайливе та лагідне кошеня. Любить гратися з іграшками й муркотіти на колінах. Привчене до лотка.",
+    "status": "AVAILABLE",
+    "shelter": { "id": 1, "name": "HelpDog&Cat", "location": "Київ" },
+    "dateOfArrival": "2026-03-02"
+  },
+  {
+    "id": 3,
+    "name": "Лада",
+    "species": "DOG",
+    "gender": "FEMALE",
+    "age": 36,
+    "size": "MEDIUM",
+    "photos": [
+      "https://placedog.net/640/480?id=10",
+      "https://placedog.net/640/480?id=11"
+    ],
+    "vaccinated": true,
+    "spayedNeutered": true,
+    "treatedForParasites": false,
+    "description": "Спокійна та віддана собака. Наразі проходить курс лікування, але вже шукає майбутню родину. Дуже прив'язується до людей.",
+    "breed": "Метис",
+    "adoptionConditions": "Без маленьких дітей на період відновлення.",
+    "status": "MEDICAL",
+    "shelter": { "id": 2, "name": "Прихисток Лапа", "location": "Львів" },
+    "dateOfArrival": "2026-04-10"
+  },
+  {
+    "id": 4,
+    "name": "Сімба",
+    "species": "CAT",
+    "gender": "MALE",
+    "age": 8,
+    "size": "SMALL",
+    "photos": [
+      "https://loremflickr.com/640/480/cat?lock=4",
+      "https://loremflickr.com/640/480/cat?lock=5",
+      "https://loremflickr.com/640/480/cat?lock=6"
+    ],
+    "vaccinated": true,
+    "spayedNeutered": true,
+    "treatedForParasites": true,
+    "description": "Допитливий і контактний кіт. Обожнює досліджувати все навколо та спати на сонці. Добре ладнає з іншими котами.",
+    "status": "PENDING",
+    "shelter": { "id": 2, "name": "Прихисток Лапа", "location": "Львів" },
+    "dateOfArrival": "2026-02-20"
+  },
+  {
+    "id": 5,
+    "name": "Рекс",
+    "species": "DOG",
+    "gender": "MALE",
+    "age": 60,
+    "size": "LARGE",
+    "photos": [
+      "https://placedog.net/640/480?id=20",
+      "https://placedog.net/640/480?id=21",
+      "https://placedog.net/640/480?id=22",
+      "https://placedog.net/640/480?id=23"
+    ],
+    "vaccinated": true,
+    "spayedNeutered": true,
+    "treatedForParasites": true,
+    "description": "Дорослий, врівноважений пес із спокійним характером. Ідеальний компаньйон для тихих прогулянок. Знає базові команди та чудово почувається поруч із людиною.",
+    "breed": "Лабрадор",
+    "adoptionConditions": "Підходить для родини з досвідом утримання собак.",
+    "status": "AVAILABLE",
+    "shelter": { "id": 1, "name": "HelpDog&Cat", "location": "Київ" },
+    "dateOfArrival": "2025-11-30"
+  }
+]

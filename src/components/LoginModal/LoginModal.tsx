@@ -152,7 +152,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
         )}
         <Button
           type="submit"
-          variant="primary"
+          variant="action"
           maxWidth="100%"
           height={56}
           disabled={isSubmitting}
