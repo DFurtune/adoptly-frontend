@@ -17,7 +17,7 @@ export const PasswordResetForm: React.FC<PasswordResetFormProps> = ({
   onBackToLogin,
   onSubmitEmail,
 }) => {
-  const { t } = useTranslation('translation', { keyPrefix: 'shelter.pages.reset' });
+ const { t } = useTranslation();
   const [serverError, setServerError] = useState<string | null>(null);
   const [isSent, setIsSent] = useState<boolean>(false);
 
