@@ -57,3 +57,7 @@ export const loginUser = async (data: {
 
   return response.data;
 };
+
+export const forgotPassword = async (email: string): Promise<void> => {
+  await apiClient.post('/auth/forgot-password', { email });
+};

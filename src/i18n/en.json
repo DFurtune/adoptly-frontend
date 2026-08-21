@@ -213,18 +213,18 @@
     "networkError": "Network error. Please check your internet connection and try again.",
     "submitting": "Logging in..."
   },
-  "reset": {
+  "forgotPassword": {
     "title": "Password Reset",
     "description": "Enter the email address you used during registration. We will send you a link to reset your password.",
     "emailLabel": "Email",
     "emailPlaceholder": "Enter your email address",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email address",
     "submit": "Send",
     "submitting": "Sending...",
     "backToLogin": "Back to login",
     "successTitle": "Password Reset",
-    "successDescription": "Link to reset your password has been sent to your email.",
-    "emailRequired": "Email is required",
-    "emailInvalid": "Please enter a valid email address"
+    "successDescription": "Link to reset your password has been sent to your email."
   },
   "petDetail": {
     "shelter": "Shelter",

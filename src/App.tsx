@@ -18,8 +18,7 @@ import PolicyPage from './pages/PolicyPage/PolicyPage';
 import LanguageLayout from './components/LanguageLayout/LanguageLayout';
 import ShelterLayout from './components/ShelterLayout/ShelterLayout';
 import PetDetailPage from './pages/PetDetailPage/PetDetailPage';
-
-import PasswordResetForm from './components/PasswordResetForm/PasswordResetForm';
+import ForgotPasswordForm from './components/ForgotPasswordForm/ForgotPasswordForm';
 
 const ShelterProfilePage = lazy(
   () => import('./pages/shelter/ShelterProfilePage/ShelterProfilePage')
@@ -36,12 +35,6 @@ const ShelterAnalyticsPage = lazy(
 );
 
 function App() {
-  const handleResetSubmit = async (email: string) => {
-    console.log('Запит на відновлення паролю для:', email);
-
-    await new Promise(resolve => setTimeout(resolve, 1500));
-  };
-
   return (
     <Router basename="/adoptly-frontend">
       <Header />
@@ -57,15 +50,7 @@ function App() {
             <Route path="pets" element={<PetsPage />} />
             <Route path="privacy-policy" element={<PolicyPage />} /> 
             <Route path="pets/:id" element={<PetDetailPage />} />
-            <Route
-              path="reset-password"
-              element={
-                <PasswordResetForm
-                  onBackToLogin={() => window.history.back()}
-                  onSubmitEmail={handleResetSubmit}
-                />
-              }
-            />
+            <Route path="forgot-password" element={<ForgotPasswordForm/>} />
 
             <Route path="shelter" element={<ShelterLayout />}>
               <Route index element={<Navigate to="profile" replace />} />
