@@ -111,7 +111,8 @@ const ForgotPasswordForm: React.FC = () => {
             {t('forgotPassword.successTitle')}
           </h2>
           <p className="forgot-password-description">
-            {t('forgotPassword.successDescription')} <strong>{submittedEmail}</strong>.
+            {t('forgotPassword.successDescription')}{' '}
+            <strong>{submittedEmail}</strong>.
           </p>
           <button
             type="button"

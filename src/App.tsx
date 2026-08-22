@@ -48,9 +48,9 @@ function App() {
             <Route path="shelters" element={<SheltersPage />} />
             <Route path="contacts" element={<ContactPage />} />
             <Route path="pets" element={<PetsPage />} />
-            <Route path="privacy-policy" element={<PolicyPage />} /> 
+            <Route path="privacy-policy" element={<PolicyPage />} />
             <Route path="pets/:id" element={<PetDetailPage />} />
-            <Route path="forgot-password" element={<ForgotPasswordForm/>} />
+            <Route path="forgot-password" element={<ForgotPasswordForm />} />
 
             <Route path="shelter" element={<ShelterLayout />}>
               <Route index element={<Navigate to="profile" replace />} />
