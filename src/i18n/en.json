@@ -211,6 +211,7 @@
     "accountDisabled": "Account not activated. Please check your email for activation.",
     "serverError": "Server error. Please try again later.",
     "networkError": "Network error. Please check your internet connection and try again.",
+    "googleError": "Failed to log in with Google.",
     "submitting": "Logging in..."
   },
   "forgotPassword": {

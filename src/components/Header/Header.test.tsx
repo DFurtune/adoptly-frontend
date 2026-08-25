@@ -23,6 +23,11 @@ jest.mock('../../utils/routing', () => ({
   langLink: (path: string) => path,
 }));
 
+jest.mock('../GoogleAuthContainer/GoogleAuthContainer', () => ({
+  __esModule: true,
+  default: () => <div data-testid="google-auth-container" />,
+}));
+
 describe('Header Component', () => {
   test('renders the header with correct structure', () => {
     render(

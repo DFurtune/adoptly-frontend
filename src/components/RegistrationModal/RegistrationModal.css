@@ -114,20 +114,6 @@
   fill: var(--title-color-dark);
 }
 
-.reg-form .button {
-  border-radius: 6px;
-  font-family: var(--font-secondary);
-  font-size: 16px;
-  font-weight: 800;
-  background-color: #0054d6;
-
-  color: #ffffff;
-}
-
-.reg-form .button:hover {
-  background-color: #153da8;
-}
-
 .reg-form-hint {
   display: flex;
   align-items: center;

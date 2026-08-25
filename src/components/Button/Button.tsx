@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 import './Button.css';
 
-type ButtonVariant = 'primary' | 'secondary';
+type ButtonVariant = 'primary' | 'secondary' | 'action';
 
 interface ButtonProps {
   children: ReactNode;
@@ -16,6 +16,11 @@ interface ButtonProps {
   style?: React.CSSProperties;
   type?: 'button' | 'submit';
   disabled?: boolean;
+  /**
+   * Optional layout-only className. Do NOT use for colors, backgrounds,
+   * borders, or typography — those must come from variants and design tokens.
+   */
+  className?: string;
 }
 
 const toPx = (v?: number | string) => (typeof v === 'number' ? `${v}px` : v);
@@ -31,6 +36,7 @@ const Button: React.FC<ButtonProps> = ({
   style,
   type = 'button',
   disabled = false,
+  className,
 }) => {
   const cssVars = {
     '--btn-max-width': toPx(maxWidth) ?? undefined,
@@ -44,7 +50,7 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`button button--${variant}`}
+      className={`button button--${variant}${className ? ` ${className}` : ''}`}
       style={{ ...cssVars, ...style }}
     >
       {children}

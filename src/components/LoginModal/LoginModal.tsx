@@ -4,12 +4,12 @@ import { useTranslation } from 'react-i18next';
 import Modal from '../Modal/Modal';
 import { Icon } from '../Icon/Icon';
 import Button from '../Button/Button';
-import GoogleAuthButton from '../GoogleAuthButton/GoogleAuthButton';
 import FormDivider from '../FormDivider/FormDivider';
 import './LoginModal.css';
-import { loginUser } from '../../services/auth';
+import { loginWithEmail } from '../../services/auth';
 import { isApiError } from '../../services/api';
 import { HTTP_STATUS } from '../../constants/HTTP_STATUS';
+import GoogleAuthContainer from '../GoogleAuthContainer/GoogleAuthContainer';
 
 type LoginFormData = {
   email: string;
@@ -36,8 +36,11 @@ const LoginModal: React.FC<LoginModalProps> = ({
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<LoginFormData>();
+
+  const rememberMeValue = watch('rememberMe');
 
   useEffect(() => {
     if (isOpen) {
@@ -50,7 +53,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
   const onSubmit = async (data: LoginFormData) => {
     setServerError(null);
     try {
-      await loginUser({ email: data.email, password: data.password });
+      await loginWithEmail({ email: data.email, password: data.password });
       onClose();
     } catch (error) {
       if (isApiError(error)) {
@@ -149,7 +152,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
         )}
         <Button
           type="submit"
-          variant="primary"
+          variant="action"
           maxWidth="100%"
           height={56}
           disabled={isSubmitting}
@@ -168,13 +171,13 @@ const LoginModal: React.FC<LoginModalProps> = ({
         </button>
       </p>
       <FormDivider text={t('login.signInWith')} />
-      <GoogleAuthButton
-        onClick={() => {
-          // TODO(OSTC-189): wire up real Google OAuth
-          console.log('Google auth');
-        }}
-        ariaLabel={`${t('login.signInWith')} Google`}
-      />
+      <div className="login-form-google-auth">
+        <GoogleAuthContainer
+          onSuccess={onClose}
+          onError={() => setServerError(t('login.googleError'))}
+          rememberMe={rememberMeValue}
+        />
+      </div>
     </Modal>
   );
 };
