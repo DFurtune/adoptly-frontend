@@ -214,6 +214,19 @@
     "googleError": "Failed to log in with Google.",
     "submitting": "Logging in..."
   },
+  "forgotPassword": {
+    "title": "Password Reset",
+    "description": "Enter the email address you used during registration. We will send you a link to reset your password.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email address",
+    "submit": "Send",
+    "submitting": "Sending...",
+    "backToLogin": "Back to login",
+    "successTitle": "Password Reset",
+    "successDescription": "Link to reset your password has been sent to your email."
+  },
   "petDetail": {
     "shelter": "Shelter",
     "location": "City",
