@@ -9,7 +9,9 @@ const ShelterLayout = () => {
       <ShelterSidebar />
       <section className="shelter-content">
         <div className="shelter-page">
-          <Suspense fallback={null}>
+          <Suspense
+            fallback={<div className="content-loading">Завантаження...</div>}
+          >
             <Outlet />
           </Suspense>
         </div>
