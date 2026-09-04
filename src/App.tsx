@@ -1,4 +1,4 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -17,14 +17,23 @@ const ErrorFallback = () => {
   );
 };
 
+// Remounts ErrorBoundary on route change so its hasError state resets —
+// prevents fallback from getting stuck after user navigates away from a failed route.
+const RouteErrorBoundary = () => {
+  const location = useLocation();
+  return (
+    <ErrorBoundary key={location.pathname} fallback={<ErrorFallback />}>
+      <AppRoutes />
+    </ErrorBoundary>
+  );
+};
+
 function App() {
   return (
     <Router basename="/adoptly-frontend">
       <Header />
       <main>
-        <ErrorBoundary fallback={<ErrorFallback />}>
-          <AppRoutes />
-        </ErrorBoundary>
+        <RouteErrorBoundary />
       </main>
       <Footer />
     </Router>
