@@ -1,70 +1,39 @@
-import { lazy } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from 'react-router-dom';
-import HomePage from './pages/HomePage/HomePage';
-import AboutPage from './pages/AboutPage/AboutPage';
-import HowToHelpPage from './pages/HowToHelpPage/HowToHelpPage';
-import SheltersPage from './pages/SheltersPage/SheltersPage';
-import ContactPage from './pages/ContactPage/ContactPage';
-import NotFound from './pages/NotFound/NotFound';
+import { BrowserRouter as Router, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import PetsPage from './pages/PetsPage/PetsPage';
-import PolicyPage from './pages/PolicyPage/PolicyPage';
-import LanguageLayout from './components/LanguageLayout/LanguageLayout';
-import ShelterLayout from './components/ShelterLayout/ShelterLayout';
-import PetDetailPage from './pages/PetDetailPage/PetDetailPage';
-import ForgotPasswordForm from './components/ForgotPasswordForm/ForgotPasswordForm';
+import AppRoutes from './routes/AppRoutes';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
-const ShelterProfilePage = lazy(
-  () => import('./pages/shelter/ShelterProfilePage/ShelterProfilePage')
-);
-const ShelterPetsPage = lazy(
-  () => import('./pages/shelter/ShelterPetsPage/ShelterPetsPage')
-);
-const ShelterApplicationsPage = lazy(
-  () =>
-    import('./pages/shelter/ShelterApplicationsPage/ShelterApplicationsPage')
-);
-const ShelterAnalyticsPage = lazy(
-  () => import('./pages/shelter/ShelterAnalyticsPage/ShelterAnalyticsPage')
-);
+const ErrorFallback = () => {
+  const { t } = useTranslation();
+  return (
+    <div className="route-error">
+      <p>{t('errors.somethingWentWrong')}</p>
+      <button type="button" onClick={() => window.location.reload()}>
+        {t('errors.reload')}
+      </button>
+    </div>
+  );
+};
+
+// Remounts ErrorBoundary on route change so its hasError state resets —
+// prevents fallback from getting stuck after user navigates away from a failed route.
+const RouteErrorBoundary = () => {
+  const location = useLocation();
+  return (
+    <ErrorBoundary key={location.pathname} fallback={<ErrorFallback />}>
+      <AppRoutes />
+    </ErrorBoundary>
+  );
+};
 
 function App() {
   return (
     <Router basename="/adoptly-frontend">
       <Header />
       <main>
-        <Routes>
-          <Route path="/" element={<Navigate to="/uk/" replace />} />
-          <Route path="/:lng" element={<LanguageLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path="about" element={<AboutPage />} />
-            <Route path="how-to-help" element={<HowToHelpPage />} />
-            <Route path="shelters" element={<SheltersPage />} />
-            <Route path="contacts" element={<ContactPage />} />
-            <Route path="pets" element={<PetsPage />} />
-            <Route path="privacy-policy" element={<PolicyPage />} />
-            <Route path="pets/:id" element={<PetDetailPage />} />
-            <Route path="forgot-password" element={<ForgotPasswordForm />} />
-
-            <Route path="shelter" element={<ShelterLayout />}>
-              <Route index element={<Navigate to="profile" replace />} />
-              <Route path="profile" element={<ShelterProfilePage />} />
-              <Route path="pets" element={<ShelterPetsPage />} />
-              <Route
-                path="applications"
-                element={<ShelterApplicationsPage />}
-              />
-              <Route path="analytics" element={<ShelterAnalyticsPage />} />
-            </Route>
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
+        <RouteErrorBoundary />
       </main>
       <Footer />
     </Router>

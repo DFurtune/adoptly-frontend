@@ -23,3 +23,9 @@
   line-height: 1.2;
   color: var(--title-color-dark);
 }
+
+.content-loading {
+  text-align: center;
+  font-size: 16px;
+  padding: 40px 20px;
+}
