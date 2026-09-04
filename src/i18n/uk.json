@@ -150,7 +150,9 @@
     "submit_button": "Надіслати"
   },
   "errors": {
-    "required": "Це поле обов'язкове"
+    "required": "Це поле обов'язкове",
+    "somethingWentWrong": "Щось пішло не так",
+    "reload": "Оновити"
   },
   "notFoundPage": {
     "button": "Повернутись на головну",
@@ -246,7 +248,8 @@
   },
   "common": {
     "yes": "Так",
-    "no": "Ні"
+    "no": "Ні",
+    "loading": "Завантаження..."
   },
   "shelter": {
     "menu": {

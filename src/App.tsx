@@ -1,17 +1,21 @@
 import { BrowserRouter as Router } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import AppRoutes from './routes/AppRoutes';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
-const ErrorFallback = () => (
-  <div className="route-error">
-    <p>Щось пішло не так</p>
-    <button type="button" onClick={() => window.location.reload()}>
-      Оновити
-    </button>
-  </div>
-);
+const ErrorFallback = () => {
+  const { t } = useTranslation();
+  return (
+    <div className="route-error">
+      <p>{t('errors.somethingWentWrong')}</p>
+      <button type="button" onClick={() => window.location.reload()}>
+        {t('errors.reload')}
+      </button>
+    </div>
+  );
+};
 
 function App() {
   return (
